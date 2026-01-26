@@ -1,7 +1,7 @@
 # オーグメンテッド vs ピュアリスト非対称戦の発生リスク
 
 **最終更新**: 2026年1月27日  
-**言語**: 日本語 | [English](../../en/augmented-vs-purist/dialogue-full.md)  
+**言語**: 日本語 | [English](../../en/augmented-vs-purist/overview.md)  
 **原典**: [Note記事](https://note.com/portfolio_5round/n/nd08e72640494)  
 **プロジェクト**: [まだ十分に可視化されていない将来リスク](../../index.md)
 
@@ -417,7 +417,7 @@
 
 - [グラデーション理論の詳細解説](./gradient-theory.md)
 - [3つのシナリオの詳細比較](./three-scenarios.md)
-- [英語版 Full Dialogue](../../en/augmented-vs-purist/dialogue-full.md)
+- [英語版 Full Dialogue](../../en/augmented-vs-purist/overview.md)
 - [原典 Note記事](https://note.com/portfolio_5round/n/nd08e72640494)
 - [インタラクティブゲーム版「オーグメンテッド」](https://t.co/qXwEYkUSUs)
 
