@@ -2,7 +2,7 @@
 
 **最終更新**: 2026年1月27日  
 **言語**: 日本語 | [English](../../en/augmented-vs-purist/overview.md)  
-**原典**: [Note記事](https://note.com/portfolio_5round/n/nd08e72640494)  
+**原典**: [Note記事](https://note.com/portfolio_5round/n/n24aa7b33fb47)  
 **プロジェクト**: [まだ十分に可視化されていない将来リスク](../../index.md)
 
 ---
