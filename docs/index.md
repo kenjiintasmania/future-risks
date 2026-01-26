@@ -1,1 +1,92 @@
+# まだ十分に可視化されていない将来リスク
+## Under-Recognized Future Risks
 
+**7つの実存的リスクについての対話・分析・予防**
+
+---
+
+## プロジェクト概要
+
+人類が直面する重大なリスクの中で、まだ十分に認識・可視化されていないものを特定し、
+対話を通じて構造化し、予防策を提案するプロジェクトです。
+
+---
+
+## 7つのリスク
+
+### 1. [オーグメンテッド vs ピュアリスト紛争](./ja/augmented-vs-purist/dialogue-full.md) 🔥
+人間強化技術をめぐる社会の分断と非対称戦争のリスク
+
+**キーワード**: トランスヒューマニズム、グラデーション理論、可逆性
+
+[📖 完全対話ログ(日本語)](./ja/augmented-vs-purist/dialogue-full.md) | [🎮 ゲーム版](https://t.co/qXwEYkUSUs)
+
+---
+
+### 2. BCIハッキング
+脳-コンピュータインターフェースへのサイバー攻撃と精神的侵害
+
+**Status**: 執筆中
+
+---
+
+### 3. 合成生物学の民主化リスク
+遺伝子編集技術の普及による意図的・非意図的パンデミック
+
+**Status**: 執筆中
+
+---
+
+### 4. AI生成コンテンツによる認識論的崩壊
+真実の判断不可能化と民主主義の基盤崩壊
+
+**Status**: 執筆中
+
+---
+
+### 5. 量子コンピュータによる暗号崩壊
+現行暗号技術の無効化と金融・安全保障システムの崩壊
+
+**Status**: 執筆中
+
+---
+
+### 6. マイクロプラスチックの認知影響
+人体蓄積による世代を超えた認知能力低下
+
+**Status**: 執筆中
+
+---
+
+### 7. ミーム兵器と集団精神操作
+SNSアルゴリズム+AIによる民主主義のハッキング
+
+**Status**: 執筆中
+
+---
+
+## 言語 | Languages
+
+- 🇯🇵 [日本語](./ja/)
+- 🇬🇧 [English](./en/) (Coming soon)
+
+---
+
+## 貢献・フィードバック
+
+このプロジェクトは進行中です。
+
+- **Issue**: バグ報告・提案は [GitHub Issues](https://github.com/kenji-yamada/future-risks/issues)
+- **Discussion**: 議論は [GitHub Discussions](https://github.com/kenji-yamada/future-risks/discussions)
+- **Pull Request**: 歓迎します
+
+---
+
+## ライセンス
+
+[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+
+---
+
+**執筆者**: Kenji Yamada  
+**最終更新**: 2026年1月27日
