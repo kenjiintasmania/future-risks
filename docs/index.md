@@ -14,7 +14,7 @@
 
 ## 7つのリスク
 
-### 1. [オーグメンテッド vs ピュアリスト紛争](./ja/augmented-vs-purist/dialogue-full.md) 🔥
+### 1. [オーグメンテッド vs ピュアリスト紛争](./ja/augmented-vs-purist/overview.md) 🔥
 人間強化技術をめぐる社会の分断と非対称戦争のリスク
 
 **キーワード**: トランスヒューマニズム、グラデーション理論、可逆性
