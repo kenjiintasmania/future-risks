@@ -25,8 +25,8 @@ AIとの対話や未来シミュレーションを
 現状:2.5
 この対話ログ公開による人類への貢献:+0.125
 合計:2.625
-
 *Simulated by Claude
+
 [📖 完全対話ログ(日本語)](./ja/augmented-vs-purist/dialogue-full.md) | [🎮 ゲーム版](https://t.co/qXwEYkUSUs)
 
 ---
