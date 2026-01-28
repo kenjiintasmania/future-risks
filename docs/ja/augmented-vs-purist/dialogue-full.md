@@ -19,7 +19,7 @@
 
 →「高脅威 × 低認知 × 中程度前兆 × 未準備」という最悪型接近構造
 
-*Simulated by Claude
+*Simulated by Claude & ChatGPT
 
 ---
 
