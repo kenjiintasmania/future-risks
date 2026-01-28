@@ -7,7 +7,7 @@
 ---
 
 
-<img width="1536" height="600" alt="gradient-spectrum" src="https://github.com/user-attachments/assets/f91d3c2d-0966-48fe-85c4-2dfef440b2f7" />
+<img width="1536" height="400" alt="gradient-spectrum" src="https://github.com/user-attachments/assets/f91d3c2d-0966-48fe-85c4-2dfef440b2f7" />
 
 ## 目次
 
