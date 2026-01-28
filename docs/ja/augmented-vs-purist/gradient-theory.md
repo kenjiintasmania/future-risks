@@ -6,7 +6,7 @@
 
 ---
 
-![グラデーション理論](./images/gradient.png)
+![グラデーション理論](./images/gradient-spectrum.png)
 
 ## 目次
 
