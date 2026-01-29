@@ -43,6 +43,8 @@ AIとの対話や未来シミュレーションを
 
 [📖 完全対話ログ(日本語)](./ja/augmented-vs-purist/dialogue-full.md) | [🎮 ゲーム版](https://t.co/qXwEYkUSUs)
 
+ [English](../../en/augmented-vs-purist/overview.md)  
+
 ---
 
 ### 2. BCIハッキング
