@@ -12,7 +12,14 @@ AIとの対話や未来シミュレーションを
 人類が直面する重大なリスクの中で、まだ十分に認識・可視化されていないものを特定し、
 対話を通じて構造化し、予防策を提案するプロジェクトです。
 
+
+**🌐 English version available**: [English Index](./en/)
+
 ---
+
+
+**🌐 English version available**: [English Index](./en/)
+
 
 ## 7つのリスク
 
