@@ -100,7 +100,7 @@ Invisible, irreversible contamination affecting human cognition across generatio
 ## Language
 
 - **English** (current page)
-- [日本語版 / Japanese](../ja/)
+- [日本語版 / Japanese](../)
 
 ---
 
