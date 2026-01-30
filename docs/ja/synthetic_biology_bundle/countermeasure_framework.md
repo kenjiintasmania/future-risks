@@ -372,7 +372,7 @@
 
 ## 関連リンク
 
-- [合成生物学脅威バンドル：Overview](./synthetic_biology_bundle_overview.md)
+- [合成生物学脅威バンドル：Overview](./synthetic_biology_bundle/overview.md)
 - [バイオテロ民主化：詳細](./bioterror_democratization.md)
 - [生態系ハイジャック：詳細](./ecosystem_hijacking.md)
 - [統合リスク評価表（14リスク）](../integrated_risk_assessment.md)
