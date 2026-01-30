@@ -273,7 +273,7 @@
 - [合成生物学脅威バンドル：Overview](./synthetic-biology/overview.md)
 - [認識論崩壊脅威バンドル：Overview](./epistemological-collapse/overview.md)（予定）
 - [神経支配脅威バンドル：Overview](./neural-control/overview.md)（予定）
-- [根本技術ツリー](./technology_tree.md)
+- [根本技術ツリー](./tech_tree.md)
 - [トップページ](./index.md)
 
 ---
