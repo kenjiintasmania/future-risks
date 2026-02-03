@@ -136,6 +136,13 @@
         <span class="text-xl font-bold" id="level-text">やや高め</span>
       </div>
 
+      <!-- 具体例表示 -->
+      <div class="bg-white/80 backdrop-blur rounded-xl p-4 text-center mt-4" id="metaphor-box">
+        <div class="text-lg text-gray-700 mb-1">40年間で...</div>
+        <div class="text-2xl font-bold" id="metaphor-text">🎲 サイコロ 2個分</div>
+        <div class="text-xs text-gray-500 mt-2" id="metaphor-weight">(約 8.5g)</div>
+      </div>
+
       <!-- 寄与度バー -->
       <div class="mt-4 bg-white/60 rounded-xl p-4">
         <div class="text-sm font-medium text-gray-700 mb-2">経路別の寄与度</div>
@@ -204,6 +211,37 @@
 
     const colors = ['bg-blue-500', 'bg-cyan-500', 'bg-amber-500', 'bg-rose-500'];
 
+    // 比喩用の基準（グラム）
+    const METAPHORS = {
+      dice: { name: 'サイコロ', weight: 4, icon: '🎲' },
+      creditCard: { name: 'クレジットカード', weight: 5, icon: '💳' },
+      phoneCase: { name: 'スマホケース', weight: 30, icon: '📱' },
+      phone: { name: 'スマホ', weight: 170, icon: '📱' }
+    };
+
+    // 粒子数→質量換算（保守的推定: 1億粒子 ≒ 1g）
+    // 根拠: Mohamed Nor 2021の確率論的モデルを参考にした推定
+    const PARTICLES_PER_GRAM = 100000000;
+
+    function getMetaphor(fortyYearParticles) {
+      const grams = fortyYearParticles / PARTICLES_PER_GRAM;
+      
+      // 最適な比喩を選択
+      if (grams >= 170) {
+        const count = Math.round(grams / METAPHORS.phone.weight * 10) / 10;
+        return { ...METAPHORS.phone, count, grams };
+      } else if (grams >= 30) {
+        const count = Math.round(grams / METAPHORS.phoneCase.weight * 10) / 10;
+        return { ...METAPHORS.phoneCase, count, grams };
+      } else if (grams >= 5) {
+        const count = Math.round(grams / METAPHORS.creditCard.weight * 10) / 10;
+        return { ...METAPHORS.creditCard, count, grams };
+      } else {
+        const count = Math.round(grams / METAPHORS.dice.weight * 10) / 10;
+        return { ...METAPHORS.dice, count, grams: Math.max(grams, 0.1) };
+      }
+    }
+
     function formatNumber(num) {
       if (num >= 1000000) return `${(num / 1000000).toFixed(1)}M`;
       if (num >= 1000) return `${(num / 1000).toFixed(1)}K`;
@@ -261,6 +299,20 @@
 
       const resultSection = document.getElementById('result-section');
       resultSection.className = `rounded-2xl shadow-sm border p-6 mb-6 ${bgClass} ${borderClass}`;
+
+      // 比喩表示を更新
+      const metaphor = getMetaphor(fortyYearParticles);
+      const metaphorText = document.getElementById('metaphor-text');
+      const metaphorWeight = document.getElementById('metaphor-weight');
+      
+      if (metaphor.count < 0.1) {
+        metaphorText.textContent = `${metaphor.icon} ${metaphor.name}の欠片程度`;
+      } else if (metaphor.count === 1) {
+        metaphorText.textContent = `${metaphor.icon} ${metaphor.name} 約1個分`;
+      } else {
+        metaphorText.textContent = `${metaphor.icon} ${metaphor.name} 約${metaphor.count}個分`;
+      }
+      metaphorWeight.textContent = `(約 ${metaphor.grams.toFixed(1)}g)`;
 
       // 寄与度バー
       const barContainer = document.getElementById('contribution-bar');
