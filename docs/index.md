@@ -167,6 +167,7 @@ layout: default
 | AI認識論崩壊 | ディープフェイク等により「何が真実か」の判断基盤が崩壊 | [認識論崩壊概要](epistemological_collapse/overview_v2.md) |
 | 客観的現実の喪失 | 共有された「事実」が消滅し、集団的意思決定が不能に | [客観的現実喪失](epistemological_collapse/loss_of_objective_reality.md) |
 | ミーム兵器 | 情報を武器として意図的に設計・拡散するシステム | [ミーム兵器](epistemological_collapse/meme_weapons.md) |
+| 存在的基盤層（対策） | 技術に追い越されない7層の防波堤（委譲の自覚～観測態度） | [存在的基盤層](epistemological_collapse/existential_foundations.md) |
 
 ### 神経支配バンドル
 
@@ -232,7 +233,7 @@ layout: default
 | **絶命権・変数タイムカプセル** | 変数固定化の進行 | 「死」を変数保存と再定義。休眠者＝未来への多様性備蓄 | 恒久的 |
 | **共進化マリアージュ・第5人類評議会** | ASIの即断リスク | 人間の「遅さ」をガバナンス装置として実装。遅延権・諮問権・拒否権 | 恒久的 |
 
-→ [FIS](fake_immune_system.md) / [絶命権](right_to_terminate.md) / [共進化マリアージュ](coevolution_marriage.md)
+→ [FIS](fake_immune_system.md) / [絶命権](right_to_terminate.md) / [共進化マリアージュ](coevolution_marriage.md) / [グレーゾーン期対策体系（統合版）](grey_zone_countermeasures.md)
 
 ### 4.5 関連理論
 
