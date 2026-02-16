@@ -1,4 +1,4 @@
-# まだ十分に可視化されていない未来リスク：プロジェクト・オーバービュー
+# まだ十分に可視化されていない将来リスク：プロジェクト・オーバービュー
 
 最終更新: 2026年2月16日（v3）  
 プロジェクト: Under-Recognized Future Risks  
@@ -151,32 +151,32 @@
 
 | リスク | 一行要約 | 文書 |
 |--------|---------|------|
-| 合成生物学民主化 | CRISPR+AI統合により生物兵器設計が個人レベルに降下 | [バンドル概要](synthetic_biology_bundle_overview.md) |
-| バイオテロ民主化 | 非国家主体による標的型生物兵器の作成・散布 | [バイオテロ](bioterror_democratization.md) |
-| 生態系ハイジャック | 遺伝子ドライブ等による生態系の不可逆的改変 | [生態系ハイジャック](ecosystem_hijacking.md) |
-| 腸内細菌操作 | 腸内フローラへの意図的介入による健康・認知・行動の操作 | [腸内細菌操作](microbiome_manipulation.md) |
+| 合成生物学民主化 | CRISPR+AI統合により生物兵器設計が個人レベルに降下 | [バンドル概要](synthetic_biology_bundle/overview.md) |
+| バイオテロ民主化 | 非国家主体による標的型生物兵器の作成・散布 | [バイオテロ](synthetic_biology_bundle/bioterror_democratization.md) |
+| 生態系ハイジャック | 遺伝子ドライブ等による生態系の不可逆的改変 | [生態系ハイジャック](synthetic_biology_bundle/ecosystem_hijacking.md) |
+| 腸内細菌操作 | 腸内フローラへの意図的介入による健康・認知・行動の操作 | [腸内細菌操作](synthetic_biology_bundle/microbiome_manipulation.md) |
 
 ### 認識論崩壊バンドル
 
 | リスク | 一行要約 | 文書 |
 |--------|---------|------|
-| AI認識論崩壊 | ディープフェイク等により「何が真実か」の判断基盤が崩壊 | [認識論崩壊概要](epistemological_collapse_overview_v2.md) |
-| 客観的現実の喪失 | 共有された「事実」が消滅し、集団的意思決定が不能に | [客観的現実喪失](loss_of_objective_reality.md) |
-| ミーム兵器 | 情報を武器として意図的に設計・拡散するシステム | [ミーム兵器](meme_weapons.md) |
+| AI認識論崩壊 | ディープフェイク等により「何が真実か」の判断基盤が崩壊 | [認識論崩壊概要](epistemological_collapse/overview_v2.md) |
+| 客観的現実の喪失 | 共有された「事実」が消滅し、集団的意思決定が不能に | [客観的現実喪失](epistemological_collapse/loss_of_objective_reality.md) |
+| ミーム兵器 | 情報を武器として意図的に設計・拡散するシステム | [ミーム兵器](epistemological_collapse/meme_weapons.md) |
 
 ### 神経支配バンドル
 
 | リスク | 一行要約 | 文書 |
 |--------|---------|------|
-| BCIハッキング | ブレイン・コンピュータ・インターフェースへの不正アクセス | [神経支配概要](neural_control_overview_v2.md) |
-| 神経的自由意志喪失 | 外部介入により「自分で決めた」という感覚自体が操作される | [自由意志喪失](neurological_free_will_loss.md) |
-| 複合毒性システム | 化学物質・電磁波・マイクロプラスチックの相互作用による複合影響 | [複合毒性](composite_toxicity_system_analysis.md) |
+| BCIハッキング | ブレイン・コンピュータ・インターフェースへの不正アクセス | [神経支配概要](neural_control/overview.md) |
+| 神経的自由意志喪失 | 外部介入により「自分で決めた」という感覚自体が操作される | [自由意志喪失](neural_control/neurological_free_will_loss.md) |
+| 複合毒性システム | 化学物質・電磁波・マイクロプラスチックの相互作用による複合影響 | [複合毒性](neural_control/composite_toxicity_system_analysis.md) |
 
 ### ハブ＋衛星リスク
 
 | リスク | 一行要約 | 文書 |
 |--------|---------|------|
-| A/P紛争 | 身体拡張派（Augmented）vs 純粋主義者（Purist）の社会的分裂 | [A/P紛争](augmented_vs_purist_overview.md) |
+| A/P紛争 | 身体拡張派（Augmented）vs 純粋主義者（Purist）の社会的分裂 | [A/P紛争](augmented-vs-purist/overview.md) |
 | 遺伝子格差社会 | 遺伝子編集技術へのアクセス格差が固定的な生物学的階級を生む | [遺伝子格差](genetic_inequality_overview_v2.md) |
 | 量子リスク | 量子暗号崩壊と量子技術格差紛争の二重リスク | [量子リスク](quantum_risks_overview_v2.md) |
 
@@ -235,7 +235,7 @@
 | 理論・モデル | 一行要約 | 文書 |
 |-------------|---------|------|
 | ポセイドン・モデル | いずれのAI圏にも属さず、技術利用しつつ意志移譲を拒否する独立圏 | [ポセイドン](poseidon_model.md) |
-| ニューロライツ再設計 | 「自由意志」を操作的定義に置換し、実装可能な権利体系に縮退 | [ニューロライツ批判的分析](neurorights_critical_analysis.md) |
+| ニューロライツ再設計 | 「自由意志」を操作的定義に置換し、実装可能な権利体系に縮退 | [ニューロライツ批判的分析](neural_control/neurorights_critical_analysis.md) |
 | 自由意志・エージェンシー | 意味特異点の通過条件と、自由意志の段階的喪失メカニズム | [自由意志分析](free_will_agency_self_analysis.md) |
 
 ---
@@ -254,7 +254,7 @@
 | AI生成・認識論 | ディープフェイク拡散 | グレーゾーン期突入 | 客観的現実の消失 |
 | マイクロプラスチック動態 | 体内蓄積の進行 | 内分泌撹乱の顕在化 | 認知・生殖への不可逆的影響 |
 
-→ 詳細は [tech-tree_v2.md](tech-tree_v2.md) を参照
+→ 詳細は [tech-tree.md](tech-tree.md) を参照
 
 ---
 
@@ -288,7 +288,7 @@ AIの安全実装に必要な基本条件。いずれも現在の技術で実装
 
 見えない漏斗（最適化→多様性減少→エントロピー死）への構造的保険。外縁（実験・変化を許容）と内核（完全隔離・アーカイブ）の二層構造。
 
-→ 詳細は [対策フレームワーク](countermeasure_framework.md) / [ASI対策v2](asi_countermeasures_v2.md) を参照
+→ 詳細は [対策フレームワーク](synthetic_biology_bundle/countermeasure_framework.md) / [ASI対策v2](asi_countermeasures_v2.md) を参照
 
 ---
 
@@ -311,7 +311,7 @@ AIの安全実装に必要な基本条件。いずれも現在の技術で実装
 | ゲームブック | https://www.amazon.co.jp/stores/author/B0DPHKFM25 |
 | 概念辞書 | [concept_dictionary.md](concept_dictionary.md) |
 | リスク構造詳細（v3） | [risk_structure_20risks_v3.md](risk_structure_20risks_v3.md) |
-| 統合リスク評価 | [integrated_risk_assessment_v5.md](integrated_risk_assessment_v5.md) |
+| 統合リスク評価 | [integrated_risk_assessment.md](integrated_risk_assessment.md) |
 
 ---
 
