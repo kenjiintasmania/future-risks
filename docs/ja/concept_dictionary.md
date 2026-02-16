@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # 概念辞書：まだ十分に可視化されていない将来リスク
 
 **Concept Dictionary: Under-Recognized Future Risks**
