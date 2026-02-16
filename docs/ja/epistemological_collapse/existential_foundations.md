@@ -1,7 +1,7 @@
 # 存在的基盤層（0-6）：認識論崩壊への本当の防波堤
 
 最終更新: 2026年2月16日  
-親ページ: [認識論崩壊脅威バンドル：Overview](./overview.md)
+親ページ: [認識論崩壊脅威バンドル：Overview](./overview_v2.md)
 
 ---
 
@@ -425,7 +425,7 @@ ASIが人間の認知を完全に理解し最適化できる場合、基盤0（�
 
 ## 関連リンク
 
-- [認識論崩壊脅威バンドル：Overview](./overview.md)
+- [認識論崩壊脅威バンドル：Overview](./overview_v2.md)
 - [ミーム兵器：詳細](./meme_weapons.md)
 - [客観的現実の喪失](./loss_of_objective_reality.md)
 - [意味特異点](../meaning_singularity_v2.md)
