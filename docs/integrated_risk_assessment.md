@@ -264,11 +264,15 @@
 
 ## 関連リンク
 
-- [合成生物学脅威バンドル：Overview](./synthetic_biology_bundle_overview.md)
-- [腸内細菌操作：詳細](./microbiome_manipulation.md) 🆕
-- [認識論崩壊脅威バンドル：Overview](./epistemological_collapse_overview.md)
-- [神経支配脅威バンドル：Overview](./neural_control_overview.md)
-- [根本技術ツリー](./technology_tree.md)
+- [合成生物学脅威バンドル：Overview](./synthetic_biology_bundle/overview.md)
+- [バイオテロ民主化：詳細](./synthetic_biology_bundle/bioterror_democratization.md)
+- [生態系ハイジャック：詳細](./synthetic_biology_bundle/ecosystem_hijacking.md)
+- [対策フレームワーク](./synthetic_biology_bundle/countermeasure_framework.md)
+- [認識論崩壊脅威バンドル：Overview](./epistemological_collapse/overview_v2.md)
+- [ミーム兵器：詳細](./epistemological_collapse/meme_weapons.md)
+- [存在的基盤層](./epistemological_collapse/existential_foundations.md)
+- [神経支配脅威バンドル：Overview](./neural_control/overview.md)
+- [根本技術ツリー](./tech-tree.md)
 - [トップページ](./index.md)
 
 ---
