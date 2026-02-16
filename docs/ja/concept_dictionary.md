@@ -660,10 +660,10 @@ ASI全般 ←── 構想段階対策A-G / ASIプレナップ / 認知多様性
 
 ### バンドル詳細
 - `emergent_talent_bundle_overview.md` — 創発人材生存競争バンドル
-- `synthetic_biology_bundle_overview.md` — 合成生物学バンドル
-- `epistemological_collapse_overview_v2.md` — 認識論崩壊バンドル
-- `neural_control_overview_v2.md` — 神経支配バンドル
-- `augmented_vs_purist_overview.md` — A/P紛争
+- `synthetic_biology_bundle/overview.md` — 合成生物学バンドル
+- `epistemological_collapse/overview_v2.md` — 認識論崩壊バンドル
+- `neural_control/overview.md` — 神経支配バンドル
+- `augmented-vs-purist/overview.md` — A/P紛争
 - `genetic_inequality_overview_v2.md` — 遺伝子格差社会
 - `quantum_risks_overview_v2.md` — 量子リスクペア
 - `existential_foundations.md` — 存在的基盤層（0-6）★新規
@@ -677,7 +677,7 @@ ASI全般 ←── 構想段階対策A-G / ASIプレナップ / 認知多様性
 
 ### その他
 - `countermeasure_framework.md` — バイオドーム圏構想
-- `tech-tree_v2.md` — 技術ツリー
+- `tech-tree.md` — 技術ツリー
 - `free_will_agency_self_analysis.md` — 自由意志・主体性の自己分析
 - `index_v3.md` — GitHub用オーバービュー（26リスク版）★新規
 - `ai_problem_overview_note.md` — Note記事用AI問題オーバービュー★新規
