@@ -316,7 +316,7 @@ AIの安全実装に必要な基本条件。いずれも現在の技術で実装
 | Note（対話ログ） | https://note.com/portfolio_5round |
 | ゲームブック | https://www.amazon.co.jp/stores/author/B0DPHKFM25 |
 | 概念辞書 | [concept_dictionary.md](ja/concept_dictionary.md) |
-| 統合リスク評価 | [integrated_risk_assessment.md](integrated_risk_assessment.md) |
+| 統合リスク評価 | [integrated_risk_assessment.md](ja/integrated_risk_assessment.md) |
 
 ---
 
