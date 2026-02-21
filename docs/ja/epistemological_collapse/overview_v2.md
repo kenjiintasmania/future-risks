@@ -1,4 +1,9 @@
-# 認識論崩壊脅威バンドル：Overview
+---
+layout: default
+title: "認識論崩壊バンドル：Overview"
+lang: ja
+---
+# 認識論崩壊バンドル：Overview
 
 最終更新: 2026年2月2日  
 言語: 日本語 | English  
@@ -187,7 +192,7 @@ AI認識論崩壊（A：真偽判定の崩壊）
 ## 引用
 
 ```
-Kenji Yamada (2026). "認識論崩壊脅威バンドル：Overview".
+Kenji Yamada (2026). "認識論崩壊バンドル：Overview".
 Under-Recognized Future Risks Project.
 ```
 
