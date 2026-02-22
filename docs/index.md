@@ -11,7 +11,7 @@ nav_order: 1
 作成者: Kenji Yamada  
 作成支援: Claude (Anthropic) / GPT (OpenAI)
 
----
+![Future Forecasting](../images/future_forecasting_header.png)
 
 ## 0. このプロジェクトについて
 
