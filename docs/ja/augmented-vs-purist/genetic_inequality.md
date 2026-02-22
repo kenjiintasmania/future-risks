@@ -1,3 +1,9 @@
+---
+layout: default
+title: "遺伝子格差社会：A/P紛争の生物学的固定化"
+lang: ja
+---
+
 # 遺伝子格差社会：A/P紛争の生物学的固定化
 
 最終更新: 2026年2月6日  
@@ -357,10 +363,10 @@ A/P紛争で有効だった「グラデーション理論」は、遺伝子格�
 
 ## 関連文書
 
-- [A/P非対称戦 Overview](augmented-vs-purist/overview.md)
-- [グラデーション理論](gradient_theory.md)
-- [合成生物学バンドル](synthetic_biology_bundle/overview.md)
-- [技術ツリー](tech-tree.md)
+- [A/P非対称戦 Overview](augmented-vs-purist/overview.html)
+- [グラデーション理論](gradient_theory.html)
+- [合成生物学バンドル](synthetic_biology_bundle/overview.html)
+- [技術ツリー](tech-tree.html)
 
 ---
 
