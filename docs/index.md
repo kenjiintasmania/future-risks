@@ -7,6 +7,7 @@ nav_order: 1
 # まだ十分に可視化されていない将来リスク：プロジェクト・オーバービュー
 
 最終更新: 2026年2月17日（v3.1）  
+🌐 [English version available here](../en/)
 プロジェクト: Under-Recognized Future Risks  
 作成者: Kenji Yamada  
 作成支援: Claude (Anthropic) / GPT (OpenAI)
