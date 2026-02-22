@@ -7,7 +7,7 @@ nav_order: 1
 # まだ十分に可視化されていない将来リスク：プロジェクト・オーバービュー
 
 最終更新: 2026年2月17日（v3.1）  
-🌐 [English version available here](../en/)
+🌐 [English version available here](https://kenjiintasmania.github.io/future-risks/en/)
 
 プロジェクト: Under-Recognized Future Risks  
 作成者: Kenji Yamada  
@@ -313,10 +313,10 @@ AIの安全実装に必要な基本条件。いずれも現在の技術で実装
 ### 関連リソース
 
 | リソース | URL |
-| --- | --- |
-| GitHub Pages | https://kenjiintasmania.github.io/future-risks/ |
-| Note（対話ログ） | https://note.com/portfolio_5round |
-| ゲームブック | https://www.amazon.co.jp/stores/author/B0DPHKFM25 |
+|----------|-----|
+| GitHub Pages | [https://kenjiintasmania.github.io/future-risks/](https://kenjiintasmania.github.io/future-risks/) |
+| Note（対話ログ） | [https://note.com/portfolio_5round](https://note.com/portfolio_5round) |
+| ゲームブック | [https://www.amazon.co.jp/stores/author/B0DPHKFM25](https://www.amazon.co.jp/stores/author/B0DPHKFM25) |
 | 概念辞書 | [concept_dictionary.md](ja/concept_dictionary.md) |
 | 統合リスク評価 | [integrated_risk_assessment.md](ja/integrated_risk_assessment.md) |
 
