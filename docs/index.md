@@ -316,7 +316,7 @@ AIの安全実装に必要な基本条件。いずれも現在の技術で実装
 |----------|-----|
 | GitHub Pages | [https://kenjiintasmania.github.io/future-risks/](https://kenjiintasmania.github.io/future-risks/) |
 | Note（対話ログ） | [https://note.com/portfolio_5round](https://note.com/portfolio_5round) |
-| ゲームブック | [https://www.amazon.co.jp/stores/author/B0DPHKFM25](https://www.amazon.co.jp/stores/author/B0DPHKFM25) |
+| ゲームブック | [https://www.amazon.co.jp/stores/author/B06X9QV7P5](https://www.amazon.co.jp/stores/author/B06X9QV7P5) |
 | 概念辞書 | [concept_dictionary.md](ja/concept_dictionary.md) |
 | 統合リスク評価 | [integrated_risk_assessment.md](ja/integrated_risk_assessment.md) |
 
