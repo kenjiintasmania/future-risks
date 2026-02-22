@@ -324,6 +324,9 @@ AIの安全実装に必要な基本条件。いずれも現在の技術で実装
 
 *本文書はプロジェクト「まだ十分に可視化されていない将来リスク」のナビゲーション・マップである。各概念の詳細は個別文書を、全用語の定義は[概念辞書](ja/concept_dictionary.md)を参照のこと。*
 
+
 執筆者: Kenji Yamada  
 作成支援: Claude (Anthropic)  
 ライセンス: CC BY 4.0
+
+![Future Forecasting](../future_forecasting_header.png)
