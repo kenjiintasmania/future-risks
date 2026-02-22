@@ -329,4 +329,4 @@ AIの安全実装に必要な基本条件。いずれも現在の技術で実装
 作成支援: Claude (Anthropic)  
 ライセンス: CC BY 4.0
 
-![Future Forecasting](../future_forecasting_header.png)
+![Future Forecasting](./future_forecasting_header.png)
