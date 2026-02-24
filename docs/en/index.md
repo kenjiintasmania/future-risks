@@ -9,7 +9,7 @@ lang: en
 **A risk without a name is treated as a risk that does not exist.**
 
 Last updated: February 23, 2026  
-Author: Kenji Yamada  
+Author: [Kenji Yamada](../bio)
 Co-created with: Claude (Anthropic)  
 License: CC BY 4.0
 
