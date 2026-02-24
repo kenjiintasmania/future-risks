@@ -10,7 +10,7 @@ nav_order: 1
 🌐 [English version available here](https://kenjiintasmania.github.io/future-risks/en/)
 
 プロジェクト: Under-Recognized Future Risks  
-作成者: Kenji Yamada  
+作成者: [Kenji Yamada](../bio)（著者について / About the Author）
 作成支援: Claude (Anthropic) / GPT (OpenAI)
 
 ---
