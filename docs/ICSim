@@ -1,144 +1,119 @@
-import { useState, useEffect, useCallback } from "react";
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>インフラ断絶カスケード・シミュレータ v3 | Under-Recognized Future Risks</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.2/babel.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { background: #0a0a0f; color: #ddd; min-height: 100vh; }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.4} }
+    @keyframes pulse { 0%,100%{box-shadow:0 0 8px #ff000030} 50%{box-shadow:0 0 20px #ff000060} }
+    @keyframes pulse-ring { 0%{r:22;opacity:0.4} 100%{r:32;opacity:0} }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+const { useState, useEffect, useCallback } = React;
 
 const GAFAM_SERVICES = [
   {
-    id: "google",
-    name: "Google",
+    id: "google", name: "Google",
     sub: "検索 / Gmail / Maps / Android / YouTube",
     color: "#ea4335",
-    impacts: {
-      finance: 0.08, telecom: 0.10, internet: 0.25, civilian: 0.20,
-      public: 0.08, electricity: 0.01, gas: 0.00, logistics: 0.15,
-      food: 0.02, water: 0.01,
-    },
+    impacts: { finance:0.08, telecom:0.10, internet:0.25, civilian:0.20, public:0.08, electricity:0.01, gas:0.00, logistics:0.15, food:0.02, water:0.01 },
   },
   {
-    id: "apple",
-    name: "Apple",
+    id: "apple", name: "Apple",
     sub: "iOS / App Store / iCloud / Apple Pay",
     color: "#a2aaad",
-    impacts: {
-      finance: 0.06, telecom: 0.05, internet: 0.05, civilian: 0.12,
-      public: 0.03, electricity: 0.01, gas: 0.00, logistics: 0.03,
-      food: 0.01, water: 0.00,
-    },
+    impacts: { finance:0.06, telecom:0.05, internet:0.05, civilian:0.12, public:0.03, electricity:0.01, gas:0.00, logistics:0.03, food:0.01, water:0.00 },
   },
   {
-    id: "meta",
-    name: "Meta",
+    id: "meta", name: "Meta",
     sub: "Facebook / Instagram / WhatsApp / Messenger",
     color: "#0668e1",
-    impacts: {
-      finance: 0.02, telecom: 0.03, internet: 0.08, civilian: 0.12,
-      public: 0.04, electricity: 0.00, gas: 0.00, logistics: 0.02,
-      food: 0.01, water: 0.00,
-    },
+    impacts: { finance:0.02, telecom:0.03, internet:0.08, civilian:0.12, public:0.04, electricity:0.00, gas:0.00, logistics:0.02, food:0.01, water:0.00 },
   },
   {
-    id: "amazon",
-    name: "Amazon",
+    id: "amazon", name: "Amazon",
     sub: "AWS / EC2 / S3 / Prime / Alexa",
     color: "#ff9900",
-    impacts: {
-      finance: 0.25, telecom: 0.05, internet: 0.30, civilian: 0.20,
-      public: 0.15, electricity: 0.03, gas: 0.01, logistics: 0.22,
-      food: 0.08, water: 0.02,
-    },
+    impacts: { finance:0.25, telecom:0.05, internet:0.30, civilian:0.20, public:0.15, electricity:0.03, gas:0.01, logistics:0.22, food:0.08, water:0.02 },
   },
   {
-    id: "microsoft",
-    name: "Microsoft",
+    id: "microsoft", name: "Microsoft",
     sub: "Azure / Windows / Office365 / Teams / GitHub",
     color: "#00a4ef",
-    impacts: {
-      finance: 0.20, telecom: 0.05, internet: 0.15, civilian: 0.18,
-      public: 0.25, electricity: 0.04, gas: 0.02, logistics: 0.12,
-      food: 0.03, water: 0.03,
-    },
+    impacts: { finance:0.20, telecom:0.05, internet:0.15, civilian:0.18, public:0.25, electricity:0.04, gas:0.02, logistics:0.12, food:0.03, water:0.03 },
   },
 ];
 
 const ADDITIONAL_DISRUPTIONS = [
   {
-    id: "gps",
-    name: "GPS遮断",
+    id: "gps", name: "GPS遮断",
     sub: "米国GPS衛星の信号停止",
     color: "#ff4444",
-    impacts: {
-      finance: 0.10, telecom: 0.05, internet: 0.03, civilian: 0.08,
-      public: 0.12, electricity: 0.02, gas: 0.01, logistics: 0.30,
-      food: 0.06, water: 0.01,
-    },
+    impacts: { finance:0.10, telecom:0.05, internet:0.03, civilian:0.08, public:0.12, electricity:0.02, gas:0.01, logistics:0.30, food:0.06, water:0.01 },
   },
   {
-    id: "submarine",
-    name: "海底ケーブル切断",
+    id: "submarine", name: "海底ケーブル切断",
     sub: "太平洋横断ケーブルの物理的切断",
     color: "#cc44ff",
-    impacts: {
-      finance: 0.15, telecom: 0.10, internet: 0.35, civilian: 0.10,
-      public: 0.08, electricity: 0.01, gas: 0.00, logistics: 0.08,
-      food: 0.02, water: 0.01,
-    },
+    impacts: { finance:0.15, telecom:0.10, internet:0.35, civilian:0.10, public:0.08, electricity:0.01, gas:0.00, logistics:0.08, food:0.02, water:0.01 },
   },
   {
-    id: "energy",
-    name: "エネルギー輸入停止",
+    id: "energy", name: "エネルギー輸入停止",
     sub: "中東原油 / LNG供給断絶",
     color: "#ff6600",
-    impacts: {
-      finance: 0.12, telecom: 0.08, internet: 0.08, civilian: 0.12,
-      public: 0.18, electricity: 0.55, gas: 0.65, logistics: 0.20,
-      food: 0.15, water: 0.08,
-    },
+    impacts: { finance:0.12, telecom:0.08, internet:0.08, civilian:0.12, public:0.18, electricity:0.55, gas:0.65, logistics:0.20, food:0.15, water:0.08 },
   },
 ];
 
-// Order: civilization uninstall sequence
 const INFRA_INDICATORS = [
-  { id: "finance",     name: "金融",         icon: "¥", baseVuln: 0.80 },
+  { id: "finance",     name: "金融",         icon: "¥",  baseVuln: 0.80 },
   { id: "telecom",     name: "通信",         icon: "📡", baseVuln: 0.75 },
-  { id: "internet",    name: "ネット接続",    icon: "◉", baseVuln: 0.85 },
-  { id: "civilian",    name: "民間サービス",   icon: "◈", baseVuln: 0.70 },
-  { id: "public",      name: "公共サービス",   icon: "◇", baseVuln: 0.55 },
+  { id: "internet",    name: "ネット接続",    icon: "◉",  baseVuln: 0.85 },
+  { id: "civilian",    name: "民間サービス",   icon: "◈",  baseVuln: 0.70 },
+  { id: "public",      name: "公共サービス",   icon: "◇",  baseVuln: 0.55 },
   { id: "electricity", name: "電力",         icon: "⚡", baseVuln: 0.85 },
-  { id: "gas",         name: "ガス",         icon: "◆", baseVuln: 0.80 },
-  { id: "logistics",   name: "物流",         icon: "▣", baseVuln: 0.75 },
-  { id: "food",        name: "食料供給",      icon: "◎", baseVuln: 0.62 },
-  { id: "water",       name: "水道",         icon: "◍", baseVuln: 0.30 },
+  { id: "gas",         name: "ガス",         icon: "◆",  baseVuln: 0.80 },
+  { id: "logistics",   name: "物流",         icon: "▣",  baseVuln: 0.75 },
+  { id: "food",        name: "食料供給",      icon: "◎",  baseVuln: 0.62 },
+  { id: "water",       name: "水道",         icon: "◍",  baseVuln: 0.30 },
 ];
 
 const CASCADE_RULES = [
-  // electricity hub
-  { from: "electricity", to: "water",      factor: 0.35 },
-  { from: "electricity", to: "internet",   factor: 0.55 },
-  { from: "electricity", to: "civilian",   factor: 0.30 },
-  { from: "electricity", to: "public",     factor: 0.25 },
-  { from: "electricity", to: "logistics",  factor: 0.20 },
-  { from: "electricity", to: "finance",    factor: 0.35 },
-  { from: "electricity", to: "telecom",    factor: 0.40 },
-  // internet hub
-  { from: "internet",    to: "civilian",   factor: 0.40 },
-  { from: "internet",    to: "public",     factor: 0.25 },
-  { from: "internet",    to: "logistics",  factor: 0.40 },
-  { from: "internet",    to: "finance",    factor: 0.50 },
-  // telecom
-  { from: "telecom",     to: "internet",   factor: 0.35 },
-  { from: "telecom",     to: "public",     factor: 0.30 },
-  { from: "telecom",     to: "logistics",  factor: 0.20 },
-  // finance
-  { from: "finance",     to: "civilian",   factor: 0.30 },
-  { from: "finance",     to: "logistics",  factor: 0.25 },
-  { from: "finance",     to: "public",     factor: 0.15 },
-  // logistics
-  { from: "logistics",   to: "food",       factor: 0.50 },
-  { from: "logistics",   to: "civilian",   factor: 0.15 },
-  // gas
-  { from: "gas",         to: "electricity", factor: 0.20 },
-  // food / water
-  { from: "food",        to: "public",     factor: 0.10 },
-  { from: "water",       to: "food",       factor: 0.25 },
-  { from: "water",       to: "public",     factor: 0.20 },
+  { from:"electricity", to:"water",      factor:0.35 },
+  { from:"electricity", to:"internet",   factor:0.55 },
+  { from:"electricity", to:"civilian",   factor:0.30 },
+  { from:"electricity", to:"public",     factor:0.25 },
+  { from:"electricity", to:"logistics",  factor:0.20 },
+  { from:"electricity", to:"finance",    factor:0.35 },
+  { from:"electricity", to:"telecom",    factor:0.40 },
+  { from:"internet",    to:"civilian",   factor:0.40 },
+  { from:"internet",    to:"public",     factor:0.25 },
+  { from:"internet",    to:"logistics",  factor:0.40 },
+  { from:"internet",    to:"finance",    factor:0.50 },
+  { from:"telecom",     to:"internet",   factor:0.35 },
+  { from:"telecom",     to:"public",     factor:0.30 },
+  { from:"telecom",     to:"logistics",  factor:0.20 },
+  { from:"finance",     to:"civilian",   factor:0.30 },
+  { from:"finance",     to:"logistics",  factor:0.25 },
+  { from:"finance",     to:"public",     factor:0.15 },
+  { from:"logistics",   to:"food",       factor:0.50 },
+  { from:"logistics",   to:"civilian",   factor:0.15 },
+  { from:"gas",         to:"electricity", factor:0.20 },
+  { from:"food",        to:"public",     factor:0.10 },
+  { from:"water",       to:"food",       factor:0.25 },
+  { from:"water",       to:"public",     factor:0.20 },
 ];
 
 function computeCascade(disabledIds) {
@@ -194,30 +169,30 @@ function Meter({ value, color, label, name, icon, animate }) {
   const pct = Math.round(value * 100);
   return (
     <div style={{
-      background: "rgba(15,15,20,0.85)", border: `1px solid ${value > 0.5 ? color : "#333"}`,
-      borderRadius: 6, padding: "8px 10px", transition: "all 0.6s ease",
-      boxShadow: value > 0.5 ? `0 0 12px ${color}40` : "none",
+      background:"rgba(15,15,20,0.85)", border:`1px solid ${value>0.5?color:"#333"}`,
+      borderRadius:6, padding:"8px 10px", transition:"all 0.6s ease",
+      boxShadow:value>0.5?`0 0 12px ${color}40`:"none",
     }}>
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 4 }}>
-        <span style={{ color: "#ccc", fontSize: 12, fontFamily: "'Noto Sans JP', sans-serif" }}>
-          <span style={{ marginRight: 5 }}>{icon}</span>{name}
+      <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:4}}>
+        <span style={{color:"#ccc",fontSize:12,fontFamily:"'Noto Sans JP',sans-serif"}}>
+          <span style={{marginRight:5}}>{icon}</span>{name}
         </span>
         <span style={{
-          color, fontSize: 10, fontWeight: 700, letterSpacing: 1,
-          fontFamily: "'JetBrains Mono', monospace",
-          animation: value > 0.7 && animate ? "blink 1s infinite" : "none",
+          color, fontSize:10, fontWeight:700, letterSpacing:1,
+          fontFamily:"'JetBrains Mono',monospace",
+          animation:value>0.7&&animate?"blink 1s infinite":"none",
         }}>{label}</span>
       </div>
-      <div style={{ background: "#1a1a24", borderRadius: 3, height: 16, overflow: "hidden", position: "relative" }}>
+      <div style={{background:"#1a1a24",borderRadius:3,height:16,overflow:"hidden",position:"relative"}}>
         <div style={{
-          width: `${pct}%`, height: "100%",
-          background: `linear-gradient(90deg, ${color}cc, ${color})`,
-          transition: "width 0.8s cubic-bezier(0.4,0,0.2,1)", borderRadius: 3,
-        }} />
+          width:`${pct}%`, height:"100%",
+          background:`linear-gradient(90deg,${color}cc,${color})`,
+          transition:"width 0.8s cubic-bezier(0.4,0,0.2,1)", borderRadius:3,
+        }}/>
         <span style={{
-          position: "absolute", right: 5, top: 0, fontSize: 10, color: "#fff",
-          fontFamily: "'JetBrains Mono', monospace", fontWeight: 700,
-          textShadow: "0 0 4px rgba(0,0,0,0.8)",
+          position:"absolute",right:5,top:0,fontSize:10,color:"#fff",
+          fontFamily:"'JetBrains Mono',monospace",fontWeight:700,
+          textShadow:"0 0 4px rgba(0,0,0,0.8)",lineHeight:"16px",
         }}>{pct}%</span>
       </div>
     </div>
@@ -227,140 +202,118 @@ function Meter({ value, color, label, name, icon, animate }) {
 function ToggleSwitch({ item, active, onToggle }) {
   return (
     <button onClick={() => onToggle(item.id)} style={{
-      display: "flex", alignItems: "center", gap: 8,
-      background: active ? `${item.color}18` : "rgba(15,15,20,0.7)",
-      border: `1px solid ${active ? item.color : "#333"}`,
-      borderRadius: 6, padding: "6px 10px", cursor: "pointer",
-      transition: "all 0.3s ease", width: "100%", textAlign: "left",
-      boxShadow: active ? `0 0 8px ${item.color}30` : "none",
+      display:"flex", alignItems:"center", gap:8,
+      background:active?`${item.color}18`:"rgba(15,15,20,0.7)",
+      border:`1px solid ${active?item.color:"#333"}`,
+      borderRadius:6, padding:"6px 10px", cursor:"pointer",
+      transition:"all 0.3s ease", width:"100%", textAlign:"left",
+      boxShadow:active?`0 0 8px ${item.color}30`:"none",
     }}>
       <div style={{
-        width: 32, height: 18, borderRadius: 9,
-        background: active ? item.color : "#333",
-        position: "relative", transition: "background 0.3s", flexShrink: 0,
+        width:32, height:18, borderRadius:9,
+        background:active?item.color:"#333",
+        position:"relative", transition:"background 0.3s", flexShrink:0,
       }}>
         <div style={{
-          width: 14, height: 14, borderRadius: "50%", background: "#fff",
-          position: "absolute", top: 2, left: active ? 16 : 2, transition: "left 0.3s",
-        }} />
+          width:14, height:14, borderRadius:"50%", background:"#fff",
+          position:"absolute", top:2, left:active?16:2, transition:"left 0.3s",
+        }}/>
       </div>
-      <div style={{ flex: 1, minWidth: 0 }}>
-        <div style={{ color: active ? item.color : "#888", fontSize: 12, fontWeight: 700, fontFamily: "'JetBrains Mono', monospace" }}>
+      <div style={{flex:1,minWidth:0}}>
+        <div style={{color:active?item.color:"#888",fontSize:12,fontWeight:700,fontFamily:"'JetBrains Mono',monospace"}}>
           {item.name}
         </div>
-        <div style={{ color: "#555", fontSize: 9, marginTop: 1, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
+        <div style={{color:"#555",fontSize:9,marginTop:1,whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis"}}>
           {item.sub}
         </div>
       </div>
-      <div style={{ fontSize: 9, color: active ? "#ff4444" : "#444", fontFamily: "'JetBrains Mono', monospace", fontWeight: 700 }}>
-        {active ? "断絶" : "稼働"}
+      <div style={{fontSize:9,color:active?"#ff4444":"#444",fontFamily:"'JetBrains Mono',monospace",fontWeight:700}}>
+        {active?"断絶":"稼働"}
       </div>
     </button>
   );
 }
 
-// Flow diagram: cascade propagation visualization
 function FlowDiagram({ cascade, animate }) {
   const nodePositions = {
-    finance:     { x: 80,  y: 30 },
-    telecom:     { x: 240, y: 30 },
-    internet:    { x: 400, y: 30 },
-    civilian:    { x: 140, y: 110 },
-    public:      { x: 320, y: 110 },
-    electricity: { x: 80,  y: 190 },
-    gas:         { x: 240, y: 190 },
-    logistics:   { x: 400, y: 190 },
-    food:        { x: 320, y: 270 },
-    water:       { x: 140, y: 270 },
+    finance:     {x:80,  y:30},
+    telecom:     {x:240, y:30},
+    internet:    {x:400, y:30},
+    civilian:    {x:140, y:110},
+    public:      {x:320, y:110},
+    electricity: {x:80,  y:190},
+    gas:         {x:240, y:190},
+    logistics:   {x:400, y:190},
+    food:        {x:320, y:270},
+    water:       {x:140, y:270},
   };
-
-  const activeRules = CASCADE_RULES.filter(
-    (r) => cascade[r.from] > 0.05 && cascade[r.to] > 0.05
-  );
-
   return (
-    <div style={{
-      marginTop: 16, padding: 12, background: "rgba(10,10,15,0.9)",
-      border: "1px solid #222", borderRadius: 8,
-    }}>
-      <div style={{ fontSize: 10, color: "#666", letterSpacing: 2, marginBottom: 8, fontFamily: "'JetBrains Mono', monospace" }}>
+    <div style={{marginTop:16,padding:12,background:"rgba(10,10,15,0.9)",border:"1px solid #222",borderRadius:8}}>
+      <div style={{fontSize:10,color:"#666",letterSpacing:2,marginBottom:8,fontFamily:"'JetBrains Mono',monospace"}}>
         ─── カスケード伝播マップ ───
       </div>
-      <svg viewBox="0 0 480 310" style={{ width: "100%", height: "auto" }}>
+      <svg viewBox="0 0 480 310" style={{width:"100%",height:"auto"}}>
         <defs>
           <marker id="ah" markerWidth="6" markerHeight="4" refX="6" refY="2" orient="auto">
-            <polygon points="0 0, 6 2, 0 4" fill="#555" />
+            <polygon points="0 0,6 2,0 4" fill="#555"/>
           </marker>
           <marker id="ah-active" markerWidth="6" markerHeight="4" refX="6" refY="2" orient="auto">
-            <polygon points="0 0, 6 2, 0 4" fill="#ff6644" />
+            <polygon points="0 0,6 2,0 4" fill="#ff6644"/>
           </marker>
         </defs>
-
-        {/* Edges */}
         {CASCADE_RULES.map((rule, i) => {
           const from = nodePositions[rule.from];
           const to = nodePositions[rule.to];
           if (!from || !to) return null;
           const isActive = cascade[rule.from] > 0.05 && cascade[rule.to] > 0.05;
           const strength = rule.factor;
-          const dx = to.x - from.x;
-          const dy = to.y - from.y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
+          const dx = to.x - from.x, dy = to.y - from.y;
+          const dist = Math.sqrt(dx*dx + dy*dy);
           const r = 24;
-          const sx = from.x + (dx / dist) * r;
-          const sy = from.y + (dy / dist) * r;
-          const ex = to.x - (dx / dist) * r;
-          const ey = to.y - (dy / dist) * r;
+          const sx = from.x+(dx/dist)*r, sy = from.y+(dy/dist)*r;
+          const ex = to.x-(dx/dist)*r,   ey = to.y-(dy/dist)*r;
           return (
             <line key={i} x1={sx} y1={sy} x2={ex} y2={ey}
-              stroke={isActive ? `rgba(255,${Math.round(100 - strength * 80)},${Math.round(68 - strength * 60)},${0.3 + strength * 0.5})` : "#282828"}
-              strokeWidth={isActive ? 1 + strength * 2.5 : 0.5}
-              markerEnd={isActive ? "url(#ah-active)" : "url(#ah)"}
-              style={{ transition: "all 0.8s ease" }}
+              stroke={isActive?`rgba(255,${Math.round(100-strength*80)},${Math.round(68-strength*60)},${0.3+strength*0.5})`:"#282828"}
+              strokeWidth={isActive?1+strength*2.5:0.5}
+              markerEnd={isActive?"url(#ah-active)":"url(#ah)"}
+              style={{transition:"all 0.8s ease"}}
             />
           );
         })}
-
-        {/* Nodes */}
         {INFRA_INDICATORS.map((ind) => {
           const pos = nodePositions[ind.id];
           if (!pos) return null;
           const val = cascade[ind.id] || 0;
           const color = getStatusColor(val);
-          const pct = Math.round(val * 100);
+          const pct = Math.round(val*100);
           return (
             <g key={ind.id}>
               <circle cx={pos.x} cy={pos.y} r={22}
                 fill={`${color}20`} stroke={color}
-                strokeWidth={val > 0.5 ? 2 : 1}
-                style={{ transition: "all 0.6s ease" }}
+                strokeWidth={val>0.5?2:1}
+                style={{transition:"all 0.6s ease"}}
               />
-              {val > 0.6 && (
-                <circle cx={pos.x} cy={pos.y} r={22}
-                  fill="none" stroke={color} strokeWidth={1} opacity={0.3}
-                  style={{ animation: animate ? "pulse-ring 2s infinite" : "none" }}
-                />
-              )}
-              <text x={pos.x} y={pos.y - 4} textAnchor="middle"
+              <text x={pos.x} y={pos.y-4} textAnchor="middle"
                 fill={color} fontSize={9} fontWeight={700}
-                fontFamily="'JetBrains Mono', monospace"
+                fontFamily="'JetBrains Mono',monospace"
               >{pct}%</text>
-              <text x={pos.x} y={pos.y + 10} textAnchor="middle"
+              <text x={pos.x} y={pos.y+10} textAnchor="middle"
                 fill="#999" fontSize={8}
-                fontFamily="'Noto Sans JP', sans-serif"
+                fontFamily="'Noto Sans JP',sans-serif"
               >{ind.name}</text>
             </g>
           );
         })}
       </svg>
-      <div style={{ fontSize: 9, color: "#555", marginTop: 6, lineHeight: 1.4, textAlign: "center" }}>
+      <div style={{fontSize:9,color:"#555",marginTop:6,lineHeight:1.4,textAlign:"center"}}>
         矢印の太さ＝伝播係数の強さ　｜　上位（デジタル層）から下位（生存基盤）へカスケード
       </div>
     </div>
   );
 }
 
-export default function CascadeSimulator() {
+function CascadeSimulator() {
   const [disabled, setDisabled] = useState(new Set());
   const [animate, setAnimate] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
@@ -379,139 +332,125 @@ export default function CascadeSimulator() {
   }, [animate]);
 
   const cascade = computeCascade([...disabled]);
-  const totalDisruption = Object.values(cascade).reduce((a, b) => a + b, 0) / INFRA_INDICATORS.length;
-
-  const japanContext = { energy: 15.3, food: 38, digital: 6.7 };
+  const totalDisruption = Object.values(cascade).reduce((a,b)=>a+b,0) / INFRA_INDICATORS.length;
+  const japanContext = { energy:15.3, food:38, digital:6.7 };
 
   return (
     <div style={{
-      minHeight: "100vh", background: "#0a0a0f", color: "#ddd",
-      fontFamily: "'Noto Sans JP', 'JetBrains Mono', monospace",
-      padding: "16px", maxWidth: 920, margin: "0 auto",
+      minHeight:"100vh", background:"#0a0a0f", color:"#ddd",
+      fontFamily:"'Noto Sans JP','JetBrains Mono',monospace",
+      padding:"16px", maxWidth:920, margin:"0 auto",
     }}>
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Noto+Sans+JP:wght@300;400;700&display=swap');
-        @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.4} }
-        @keyframes pulse { 0%,100%{box-shadow:0 0 8px #ff000030} 50%{box-shadow:0 0 20px #ff000060} }
-        @keyframes pulse-ring { 0%{r:22;opacity:0.4} 100%{r:32;opacity:0} }
-      `}</style>
-
       {/* Header */}
-      <div style={{ marginBottom: 14, borderBottom: "1px solid #222", paddingBottom: 10 }}>
-        <div style={{ display: "flex", alignItems: "baseline", gap: 8, flexWrap: "wrap" }}>
-          <span style={{ fontSize: 11, color: "#ff4444", fontFamily: "'JetBrains Mono', monospace", fontWeight: 700, letterSpacing: 2 }}>
+      <div style={{marginBottom:14,borderBottom:"1px solid #222",paddingBottom:10}}>
+        <div style={{display:"flex",alignItems:"baseline",gap:8,flexWrap:"wrap"}}>
+          <span style={{fontSize:11,color:"#ff4444",fontFamily:"'JetBrains Mono',monospace",fontWeight:700,letterSpacing:2}}>
             NEAR-FUTURE META-RISK #2
           </span>
-          <span style={{ fontSize: 10, color: "#444" }}>｜</span>
-          <span style={{ fontSize: 10, color: "#555", fontFamily: "'JetBrains Mono', monospace" }}>
+          <span style={{fontSize:10,color:"#444"}}>｜</span>
+          <span style={{fontSize:10,color:"#555",fontFamily:"'JetBrains Mono',monospace"}}>
             Under-Recognized Future Risks Project
           </span>
         </div>
-        <h1 style={{ fontSize: 20, fontWeight: 700, margin: "6px 0 4px", color: "#eee", letterSpacing: 1 }}>
+        <h1 style={{fontSize:20,fontWeight:700,margin:"6px 0 4px",color:"#eee",letterSpacing:1}}>
           インフラ断絶カスケード・シミュレータ v3
         </h1>
-        <p style={{ fontSize: 11, color: "#666", margin: 0, lineHeight: 1.5 }}>
+        <p style={{fontSize:11,color:"#666",margin:0,lineHeight:1.5}}>
           GAFAMサービスや物理インフラを停止させた場合の連鎖的影響を推定。
           日本のエネルギー自給率{japanContext.energy}%・食料自給率{japanContext.food}%・デジタル赤字{japanContext.digital}兆円という三重依存構造を前提とする。
         </p>
         <button onClick={() => setShowInfo(!showInfo)} style={{
-          marginTop: 6, background: "none", border: "1px solid #333",
-          color: "#666", fontSize: 10, padding: "3px 8px", borderRadius: 3, cursor: "pointer",
-        }}>{showInfo ? "▼ 前提と注意" : "▶ 前提と注意"}</button>
+          marginTop:6, background:"none", border:"1px solid #333",
+          color:"#666", fontSize:10, padding:"3px 8px", borderRadius:3, cursor:"pointer",
+        }}>{showInfo?"▼ 前提と注意":"▶ 前提と注意"}</button>
         {showInfo && (
-          <div style={{ marginTop: 8, padding: 10, background: "#111118", borderRadius: 4, fontSize: 10, color: "#888", lineHeight: 1.6, border: "1px solid #222" }}>
-            <p style={{ margin: "0 0 4px" }}><strong style={{ color: "#aaa" }}>⚠ これは正確な予測ツールではありません。</strong></p>
-            <p style={{ margin: "0 0 4px" }}>
+          <div style={{marginTop:8,padding:10,background:"#111118",borderRadius:4,fontSize:10,color:"#888",lineHeight:1.6,border:"1px solid #222"}}>
+            <p style={{margin:"0 0 4px"}}><strong style={{color:"#aaa"}}>⚠ これは正確な予測ツールではありません。</strong></p>
+            <p style={{margin:"0 0 4px"}}>
               影響率は公開データと構造分析に基づく推定値です。セクター横断的な統合シミュレーション（生態系的破綻予測）は学術的にもまだ空白地帯です。
             </p>
-            <p style={{ margin: "0 0 4px" }}>
+            <p style={{margin:"0 0 4px"}}>
               v3更新: 金融・通信セクター追加（2025年10月AWS/Azure障害の実証データ反映）。
               インフラ停止率は「文明のアンインストール順」——デジタル上位層から生存基盤へ——で表示。
             </p>
-            <p style={{ margin: 0, color: "#666" }}>数値フレームワークは「思考の道具」であり予測装置ではありません。</p>
+            <p style={{margin:0,color:"#666"}}>数値フレームワークは「思考の道具」であり予測装置ではありません。</p>
           </div>
         )}
       </div>
 
       {/* Overall Status */}
       <div style={{
-        background: totalDisruption > 0.5 ? "rgba(153,27,27,0.15)" : totalDisruption > 0.25 ? "rgba(234,179,8,0.08)" : "rgba(34,197,94,0.05)",
-        border: `1px solid ${getStatusColor(totalDisruption)}40`, borderRadius: 8,
-        padding: "10px 14px", marginBottom: 14, display: "flex",
-        justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 8,
-        animation: totalDisruption > 0.5 ? "pulse 2s infinite" : "none",
+        background:totalDisruption>0.5?"rgba(153,27,27,0.15)":totalDisruption>0.25?"rgba(234,179,8,0.08)":"rgba(34,197,94,0.05)",
+        border:`1px solid ${getStatusColor(totalDisruption)}40`, borderRadius:8,
+        padding:"10px 14px", marginBottom:14, display:"flex",
+        justifyContent:"space-between", alignItems:"center", flexWrap:"wrap", gap:8,
+        animation:totalDisruption>0.5?"pulse 2s infinite":"none",
       }}>
         <div>
-          <span style={{ fontSize: 10, color: "#888", letterSpacing: 1 }}>社会機能 総合停止率</span>
-          <div style={{ fontSize: 28, fontWeight: 700, color: getStatusColor(totalDisruption), fontFamily: "'JetBrains Mono', monospace" }}>
-            {Math.round(totalDisruption * 100)}%
+          <span style={{fontSize:10,color:"#888",letterSpacing:1}}>社会機能 総合停止率</span>
+          <div style={{fontSize:28,fontWeight:700,color:getStatusColor(totalDisruption),fontFamily:"'JetBrains Mono',monospace"}}>
+            {Math.round(totalDisruption*100)}%
           </div>
         </div>
-        <div style={{ textAlign: "right" }}>
-          <div style={{ fontSize: 14, fontWeight: 700, color: getStatusColor(totalDisruption), letterSpacing: 2 }}>
+        <div style={{textAlign:"right"}}>
+          <div style={{fontSize:14,fontWeight:700,color:getStatusColor(totalDisruption),letterSpacing:2}}>
             {getStatusLabel(totalDisruption)}
           </div>
-          <div style={{ fontSize: 10, color: "#666", marginTop: 2 }}>
+          <div style={{fontSize:10,color:"#666",marginTop:2}}>
             {disabled.size}件の断絶 → {INFRA_INDICATORS.length}セクター × カスケード反映
           </div>
         </div>
       </div>
 
       {/* Main Grid */}
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}>
+      <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:14}}>
         {/* Left: Controls */}
         <div>
-          <div style={{ fontSize: 10, color: "#666", letterSpacing: 2, marginBottom: 6, fontFamily: "'JetBrains Mono', monospace" }}>
+          <div style={{fontSize:10,color:"#666",letterSpacing:2,marginBottom:6,fontFamily:"'JetBrains Mono',monospace"}}>
             ─── GAFAM サービス ───
           </div>
-          <div style={{ display: "flex", flexDirection: "column", gap: 5 }}>
+          <div style={{display:"flex",flexDirection:"column",gap:5}}>
             {GAFAM_SERVICES.map((s) => (
-              <ToggleSwitch key={s.id} item={s} active={disabled.has(s.id)} onToggle={toggle} />
+              <ToggleSwitch key={s.id} item={s} active={disabled.has(s.id)} onToggle={toggle}/>
             ))}
           </div>
-
-          <div style={{ fontSize: 10, color: "#666", letterSpacing: 2, margin: "12px 0 6px", fontFamily: "'JetBrains Mono', monospace" }}>
+          <div style={{fontSize:10,color:"#666",letterSpacing:2,margin:"12px 0 6px",fontFamily:"'JetBrains Mono',monospace"}}>
             ─── 物理インフラ ───
           </div>
-          <div style={{ display: "flex", flexDirection: "column", gap: 5 }}>
+          <div style={{display:"flex",flexDirection:"column",gap:5}}>
             {ADDITIONAL_DISRUPTIONS.map((s) => (
-              <ToggleSwitch key={s.id} item={s} active={disabled.has(s.id)} onToggle={toggle} />
+              <ToggleSwitch key={s.id} item={s} active={disabled.has(s.id)} onToggle={toggle}/>
             ))}
           </div>
-
-          <div style={{ display: "flex", gap: 6, marginTop: 10 }}>
-            <button onClick={() => {
-              setDisabled(new Set([...GAFAM_SERVICES.map((s) => s.id), ...ADDITIONAL_DISRUPTIONS.map((s) => s.id)]));
-              setAnimate(true);
-            }} style={{
-              flex: 1, background: "#331111", border: "1px solid #662222", color: "#ff6666",
-              fontSize: 10, padding: "6px", borderRadius: 4, cursor: "pointer", fontFamily: "'JetBrains Mono', monospace",
+          <div style={{display:"flex",gap:6,marginTop:10}}>
+            <button onClick={() => { setDisabled(new Set([...GAFAM_SERVICES.map(s=>s.id),...ADDITIONAL_DISRUPTIONS.map(s=>s.id)])); setAnimate(true); }} style={{
+              flex:1, background:"#331111", border:"1px solid #662222", color:"#ff6666",
+              fontSize:10, padding:"6px", borderRadius:4, cursor:"pointer", fontFamily:"'JetBrains Mono',monospace",
             }}>全断絶</button>
             <button onClick={() => { setDisabled(new Set()); setAnimate(true); }} style={{
-              flex: 1, background: "#112211", border: "1px solid #226622", color: "#66ff66",
-              fontSize: 10, padding: "6px", borderRadius: 4, cursor: "pointer", fontFamily: "'JetBrains Mono', monospace",
+              flex:1, background:"#112211", border:"1px solid #226622", color:"#66ff66",
+              fontSize:10, padding:"6px", borderRadius:4, cursor:"pointer", fontFamily:"'JetBrains Mono',monospace",
             }}>全復旧</button>
           </div>
-
-          {/* Japan vulnerability context */}
-          <div style={{ marginTop: 12, padding: 10, background: "rgba(15,15,20,0.85)", border: "1px solid #222", borderRadius: 6 }}>
-            <div style={{ fontSize: 10, color: "#666", letterSpacing: 2, marginBottom: 6, fontFamily: "'JetBrains Mono', monospace" }}>
+          {/* Japan context */}
+          <div style={{marginTop:12,padding:10,background:"rgba(15,15,20,0.85)",border:"1px solid #222",borderRadius:6}}>
+            <div style={{fontSize:10,color:"#666",letterSpacing:2,marginBottom:6,fontFamily:"'JetBrains Mono',monospace"}}>
               ─── 日本の構造的脆弱性 ───
             </div>
-            <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
+            <div style={{display:"flex",flexDirection:"column",gap:4}}>
               {[
-                { label: "エネルギー自給率", value: japanContext.energy, unit: "%", note: "OECD最低水準" },
-                { label: "食料自給率", value: japanContext.food, unit: "%", note: "カロリーベース" },
-                { label: "デジタル赤字", value: japanContext.digital, unit: "兆円/年", note: "2024年" },
-                { label: "海底ケーブル依存", value: 99, unit: "%", note: "国際通信" },
+                {label:"エネルギー自給率", value:15.3, unit:"%",    note:"OECD最低水準"},
+                {label:"食料自給率",       value:38,   unit:"%",    note:"カロリーベース"},
+                {label:"デジタル赤字",     value:6.7,  unit:"兆円/年",note:"2024年"},
+                {label:"海底ケーブル依存", value:99,   unit:"%",    note:"国際通信"},
               ].map((item) => (
-                <div key={item.label} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", fontSize: 11 }}>
-                  <span style={{ color: "#888" }}>{item.label}</span>
+                <div key={item.label} style={{display:"flex",justifyContent:"space-between",alignItems:"center",fontSize:11}}>
+                  <span style={{color:"#888"}}>{item.label}</span>
                   <span>
-                    <span style={{ color: "#ff8844", fontWeight: 700, fontFamily: "'JetBrains Mono', monospace" }}>
+                    <span style={{color:"#ff8844",fontWeight:700,fontFamily:"'JetBrains Mono',monospace"}}>
                       {item.value}{item.unit}
                     </span>
-                    <span style={{ color: "#555", fontSize: 9, marginLeft: 4 }}>({item.note})</span>
+                    <span style={{color:"#555",fontSize:9,marginLeft:4}}>({item.note})</span>
                   </span>
                 </div>
               ))}
@@ -519,15 +458,15 @@ export default function CascadeSimulator() {
           </div>
         </div>
 
-        {/* Right: Indicators in civilization uninstall order */}
+        {/* Right: Indicators */}
         <div>
-          <div style={{ fontSize: 10, color: "#666", letterSpacing: 2, marginBottom: 6, fontFamily: "'JetBrains Mono', monospace" }}>
+          <div style={{fontSize:10,color:"#666",letterSpacing:2,marginBottom:6,fontFamily:"'JetBrains Mono',monospace"}}>
             ─── 生活インフラ停止率 ───
           </div>
-          <div style={{ fontSize: 9, color: "#555", marginBottom: 6, fontFamily: "'JetBrains Mono', monospace" }}>
+          <div style={{fontSize:9,color:"#555",marginBottom:6,fontFamily:"'JetBrains Mono',monospace"}}>
             ▲ デジタル上位層 → ▼ 生存基盤
           </div>
-          <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
+          <div style={{display:"flex",flexDirection:"column",gap:4}}>
             {INFRA_INDICATORS.map((ind) => {
               const val = cascade[ind.id] || 0;
               return (
@@ -540,37 +479,28 @@ export default function CascadeSimulator() {
         </div>
       </div>
 
-      {/* Flow Diagram Section */}
-      <FlowDiagram cascade={cascade} animate={animate} />
+      <FlowDiagram cascade={cascade} animate={animate}/>
 
-      {/* Cascade explanation */}
       {disabled.size > 0 && (
-        <div style={{
-          marginTop: 12, padding: 10, background: "rgba(234,179,8,0.05)",
-          border: "1px solid #333", borderRadius: 4, fontSize: 10, color: "#888", lineHeight: 1.5,
-        }}>
-          <span style={{ color: "#eab308", fontWeight: 700 }}>⚡ カスケード効果:</span>{" "}
+        <div style={{marginTop:12,padding:10,background:"rgba(234,179,8,0.05)",border:"1px solid #333",borderRadius:4,fontSize:10,color:"#888",lineHeight:1.5}}>
+          <span style={{color:"#eab308",fontWeight:700}}>⚡ カスケード効果:</span>{" "}
           電力停止→通信・ネット・金融連鎖、ネット停止→金融・物流・民間連鎖、
           金融停止→民間・物流・公共連鎖、物流停止→食料供給連鎖。
           各セクターの停止が他セクターを押し下げるフィードバックループを収束計算。
         </div>
       )}
 
-      {/* Footer */}
-      <div style={{
-        marginTop: 20, paddingTop: 10, borderTop: "1px solid #1a1a1a",
-        fontSize: 9, color: "#444", lineHeight: 1.5, textAlign: "center",
-      }}>
-        Under-Recognized Future Risks Project ｜ 近未来メタリスク#2：インフラ断絶カスケード v3
-        <br />
-        セクター配列：文明のアンインストール順（デジタル上位層→生存基盤）
-        <br />
-        v3更新: 金融・通信セクター追加、伝播マップ実装、2025年障害データ反映
-        <br />
-        <span style={{ color: "#555" }}>
-          参照: 資源エネルギー庁, 農林水産省, CSIS, Synergy Research, StatCounter, DemandSage
-        </span>
+      <div style={{marginTop:20,paddingTop:10,borderTop:"1px solid #1a1a1a",fontSize:9,color:"#444",lineHeight:1.5,textAlign:"center"}}>
+        Under-Recognized Future Risks Project ｜ 近未来メタリスク#2：インフラ断絶カスケード v3<br/>
+        セクター配列：文明のアンインストール順（デジタル上位層→生存基盤）<br/>
+        v3更新: 金融・通信セクター追加、伝播マップ実装、2025年障害データ反映<br/>
+        <span style={{color:"#555"}}>参照: 資源エネルギー庁, 農林水産省, CSIS, Synergy Research, StatCounter, DemandSage</span>
       </div>
     </div>
   );
 }
+
+ReactDOM.createRoot(document.getElementById("root")).render(<CascadeSimulator/>);
+  </script>
+</body>
+</html>
