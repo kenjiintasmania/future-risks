@@ -9,8 +9,8 @@ title: "Author / 著者について"
 
 ## Kenji Yamada / 山田賢治
 
-**English Language Teacher, Satosho Junior High School, Kasaoka City, Okayama, Japan**  
-岡山県笠岡市立新吉中学校 英語科教諭
+**Independent Researcher, Kasaoka City, Okayama, Japan**  
+独立研究者 / 岡山県笠岡市
 
 ---
 
@@ -36,7 +36,7 @@ The risks documented here emerged from a methodology I call "AI triangulation" �
 | 2 | 2020 | JABA 38th / 日本行動分析学会第38回 | 中学校におけるSWPBS—教員の言語称賛促進を目指した授業研究 | Co-author / 共著 |
 | 3 | 2021 | JAEP 63rd Symposium / 教心63回シンポジウム | わが国におけるPBSの広がりとその効果 | Panelist / 登壇 |
 | 4 | 2021 | JAEP 63rd / 教心63回 | ポジティブ生徒指導の動向(6) | Co-author / 共著 |
-| 5 | 2023 | 4th Asia-Pacific International Conference on PBS (Kindai Univ.) | SWPBS in a Japanese JHS: Lesson Study for Promoting Teacher Verbal Praise ※English title TBC | 90-min bilingual poster / バイリンガル発表 |
+| 5 | 2023 | 4th Asia-Pacific International Conference on PBS (Kindai Univ.) | How to Introduce PBS to Schools and How to Make it School-Wide | 90-min bilingual poster / バイリンガル発表 |
 
 #### English Language Education / 英語教育（CASELE 5 consecutive years / 5年連続）
 
@@ -93,10 +93,10 @@ PBISの教室研究で培った**データ駆動型行動観察手法**——ベ
 
 - **Project:** [kenjiintasmania.github.io/future-risks](https://kenjiintasmania.github.io/future-risks/)
 - **Thinking Logs:** [note.com/portfolio_5round](https://note.com/portfolio_5round)
-- **Game Books:** [Amazon Author Page](https://www.amazon.co.jp/stores/author/B0DPHKFM25)
+- **English Drill:** [徹底反復 英語プリント（小学館）](https://www.amazon.co.jp/dp/4092537069/)
 - **Email:** kenjiintasmania@yahoo.co.jp
 
 ---
 
-*Last updated: 2026-02-24*  
-*APBS poster English title: to be confirmed from school database*
+*Last updated: 2026-02-28*  
+*APBS poster English title confirmed: "How to Introduce PBS to Schools and How to Make it School-Wide" (Yamada & Matsuyama, 2023)*
