@@ -1,3 +1,7 @@
+# Version: 0.2
+# Date: 2026-03-03 00:15
+# Change: Concept safety patch — definitions under peer review withheld
+
 ---
 layout: default
 title: "Under-Recognized Future Risks"
@@ -8,7 +12,7 @@ lang: en
 
 **A risk without a name is treated as a risk that does not exist.**
 
-Last updated: February 23, 2026  
+Last updated: March 3, 2026  
 Author: [Kenji Yamada](../bio)
 Co-created with: Claude (Anthropic)  
 License: CC BY 4.0
@@ -57,9 +61,12 @@ Detailed analyses are written in Japanese. This page provides a self-contained E
                        ▼
 ┌──────────────────────────────────────────────────┐
 │  FOUNDATION RISK LAYER                           │
-│  Layer 1: Meaning Singularity (threshold)        │
+│  Layer 1: Meaning Singularity (†)                │
 │  Layer 2: Meaning Loss Risk (53) — already active│
 │  Layer 3: Microplastics (54) — already active    │
+│                                                  │
+│  † Formal definition under peer review.          │
+│    See forthcoming publication.                  │
 └──────────────────────────────────────────────────┘
                        │
                        ▼
@@ -119,7 +126,9 @@ Each risk is scored on four factors:
 | 22 | Quantum Technology Disparity Conflict | 45 🆘 | Satellite |
 | 23 | AI Epistemological Collapse | 43 | Epistemological Collapse B (parent) |
 | 24 | Quantum Cryptographic Collapse | 25 | Satellite |
-| — | Meaning Singularity | Threshold | Foundation (Layer 1) |
+| — | Meaning Singularity | Threshold † | Foundation (Layer 1) |
+
+† Formal analysis under peer review. See forthcoming publication.
 
 ---
 
@@ -142,12 +151,14 @@ This project employs two distinct verification approaches depending on temporal 
 
 For machine translation accuracy, the following project-specific terms are provided with their English equivalents and definitions.
 
+*Note: Several concepts are currently under peer review at academic journals. Their formal definitions are withheld until publication to preserve the integrity of the blind review process. These entries are marked with †.*
+
 ### Core Concepts
 
 | Japanese | English | Definition |
 |----------|---------|------------|
-| 意味特異点 | Meaning Singularity | The irreversible tipping point at which humans cease deciding "what they want" for themselves |
-| 意味喪失リスク | Meaning Loss Risk | The spread of nihilism ("nothing I do matters") already in progress before the Meaning Singularity |
+| 意味特異点 | Meaning Singularity † | *Under peer review. See forthcoming publication.* |
+| 意味喪失リスク | Meaning Loss Risk | The spread of nihilism ("nothing I do matters") already observable in contemporary society |
 | 見えない漏斗 | Invisible Funnel | ASI pre-adjusts the environment to narrow human choices without awareness. Four levels: entrance → midslope → constriction → exit |
 | 無人環状線 | Unmanned Loop Line | After ASI withdrawal, humanity circulates endlessly within its framework. Alt. name: Empty Palm |
 | 永遠の遅延評価 | Eternal Lazy Evaluation | Information disclosure between ASI and humans can never be completed in principle |
@@ -161,10 +172,10 @@ For machine translation accuracy, the following project-specific terms are provi
 
 | Japanese | English | Definition |
 |----------|---------|------------|
-| HYC定理 | HYC Theorem | "What cannot be verified must still be defined by social consensus for society to proceed" |
+| HYC定理 | HYC Theorem † | *Under peer review. See forthcoming publication.* |
 | グラデーション理論 | Gradient Theory | Transforming binary oppositions into continuums to mitigate social conflict |
 | 山田仮説（正） | Yamada Hypothesis (Positive) | "Kindness is output." Only observable behavior has value, regardless of inner states |
-| 山田仮説（負） | Yamada Hypothesis (Negative) | Output-first thinking leads to "if the result is good, the process doesn't matter," accelerating the Meaning Singularity |
+| 山田仮説（負） | Yamada Hypothesis (Negative) | Output-first thinking leads to "if the result is good, the process doesn't matter," which may accelerate cognitive delegation to AI systems |
 | エコースキャン | Echo Scanning | A cognitive method of detecting dissonance ("something feels off") in AI output and feeding it back immediately |
 | AI三角測量 | AI Triangulation | Using multiple AIs with different architectures to extract structural insights from response differences |
 
@@ -208,6 +219,10 @@ All detailed risk analyses are in the [Japanese section (docs/ja/)](../ja/). We 
    - [全体構造図 (Integrated Risk Assessment)](../ja/integrated_risk_assessment.html) — Full architecture and scoring
    - [根本技術ツリー (Technology Tree)](../ja/tech-tree.html) — Causal mapping from root technologies to 26 risks
    - [概念辞書 (Concept Dictionary)](../ja/concept_dictionary.html) — All terms and definitions
+
+---
+
+† Concepts marked with † have formal definitions currently under blind peer review at academic journals. Definitions will be restored upon publication. The concept names themselves have been publicly documented since February 2026 via SSRN preprints (Abstract IDs: 6285340, 6318818, 6318720, 6318660) and [Note articles](https://note.com/portfolio_5round).
 
 ---
 
