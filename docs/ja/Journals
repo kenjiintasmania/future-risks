@@ -1,0 +1,1091 @@
+# Journal Full Data — Reference Database
+
+# Version: 1.0
+# Date: 2026-05-04 23:55 JST
+# Created: 2026-05-04 23:55 JST
+# Source: star_quartile_alignment_handoff_v0_13.md（2026-05-04 22:30 JST）から誌情報部分のみを抽出
+# Purpose: GitHub公開用ジャーナル参照データベース。編集記録・パッチ取得経緯・運用判断記録・トークン消費メモ等のノイズを全削除し、誌の客観的データのみを保持
+# Coverage: 71誌（v0.7パッチ追加30誌＋v0.10取得9誌＋親MD既存23誌＋v0.8/v0.9取得9誌、うち§8-5はクロスリンク・実体70誌）
+# Notation: 丸数字＝分野内Quartile（➎=Q1 / ➍=Q2 / ➌=Q3 / ➋=Q4 / ➊=索引外 / ⓿=WoS/Scopus未収録または AHCI Q判定非付与）
+# Disclaimer: IF/SJR/APC等の数値は取得時点のもの。投稿前に必ず Scimago URL および出版社公式ページで最新値を再確認すること
+
+---
+
+## 目次
+
+- §1. ★5層投稿先誌（10誌）
+- §2. ★4.5層投稿先誌（3誌）
+- §3. ★4層投稿先誌（12誌）
+- §4. 教育系誌（10誌）
+- §5. HCI系誌（6誌）
+- §6. 哲学系誌（10誌）
+- §7. 神経倫理系誌（3誌）
+- §8. 生命倫理系誌（5誌）
+- §9. AI倫理系誌（4誌）
+- §10. 規制ガバナンス系誌（5誌）
+- §11. 未来研究系誌（4誌）
+- §12. 凡例・記号体系
+
+---
+
+# §1. ★5層投稿先誌（10誌）
+
+## §1-1. Futures
+- 丸数字：➎(未来研究)
+- 出版社：Elsevier
+- IF (JCR/2024)：4.73
+- SJR (2024)：1.12
+- 索引：SCIE/SSCI
+- Scimago URL：https://www.scimagojr.com/journalsearch.php?q=25561&tip=sid
+
+## §1-2. Philosophy and the Mind Sciences (PhiMiSci)
+- 丸数字：➎(哲学・心)
+- 出版社：Ruhr University Bochum（Diamond OA）
+- IF (JCR/2024)：n/a（JCR非収録）
+- SJR (2024)：0.766
+- APC：無料（Diamond OA）
+- Scimago URL：https://www.scimagojr.com/journalsearch.php?q=21101270277&tip=sid
+
+## §1-3. New Media & Society (NM&S)
+- 丸数字：➎(社会科学・メディア)
+- 出版社：Sage
+- IF (JCR/2024)：5.75
+- SJR (2024)：2.4
+- Scimago URL：https://www.scimagojr.com/journalsearch.php?q=16306&tip=sid
+
+## §1-4. Ethics and Information Technology (EIT)
+- 丸数字：➎(AI倫理)
+- 出版社：Springer
+- IF (JCR/2024)：4.0
+- SJR (2024)：1.107
+- Scimago URL：https://www.scimagojr.com/journalsearch.php?q=2600147402&tip=sid
+
+## §1-5. Regulation & Governance (Reg & Gov)
+- 丸数字：➎(規制ガバナンス)
+- 出版社：Wiley
+- IF (JCR/2024)：5.41
+- SJR (2024)：1.403
+- Scimago URL：https://www.scimagojr.com/journalsearch.php?q=14000156253&tip=sid
+
+## §1-6. Synthese
+- 丸数字：➎(哲学・科学哲学)
+- 出版社：Springer
+- IF (JCR/2024)：1.3
+- SJR (2024)：1.05
+- Scimago URL：https://www.scimagojr.com/journalsearch.php?q=27699&tip=sid
+
+## §1-7. Death Studies
+- 丸数字：➎(死生学)
+- 出版社：Taylor & Francis
+- IF (JCR/2024)：1.8
+- SJR (2024)：0.97
+- Scimago URL：https://www.scimagojr.com/journalsearch.php?q=13486&tip=sid
+
+## §1-8. Philosophy & Technology (Phil & Tech)
+- 丸数字：➎(技術哲学・AHCI)
+- 出版社：Springer
+- IF (JCR/2024)：n/a（AHCI収録、JCR JIF非対象）
+- SJR (2024)：1.862
+- CiteScore：6.4
+- 査読期間中央値：Submission to first decision 11日
+- Downloads (2025)：1.5M
+- 索引：AHCI（Arts and Humanities Citation Index）
+- Scimago URL：https://www.scimagojr.com/journalsearch.php?q=19700182304&tip=sid
+- 公式：https://link.springer.com/journal/13347
+- 注：Resurchify "Impact IF 5.40" は Scopus 独自計算値で JCR JIF とは別物
+
+## §1-9. Language Sciences
+- 丸数字：➎(言語学)
+- 出版社：Elsevier
+- IF (JCR/2024)：1.3
+- SJR (2024)：0.403
+- Scimago URL：https://www.scimagojr.com/journalsearch.php?q=23166&tip=sid
+
+---
+
+# §2. ★4.5層投稿先誌（3誌）
+
+## §2-1. Journal of Bioethical Inquiry (JBI)
+- 丸数字：➎(生命倫理)
+- 出版社：Springer
+- IF (JCR/2024)：1.8
+- SJR (2024)：0.551
+- Scimago URL：https://www.scimagojr.com/journalsearch.php?q=4000148017&tip=sid
+
+## §2-2. Bioethics
+- 丸数字：➎(生命倫理)
+- 出版社：Wiley
+- IF (JCR/2024)：2.37
+- SJR (2024)：0.77
+- Scimago URL：https://www.scimagojr.com/journalsearch.php?q=22258&tip=sid
+
+## §2-3. Information, Communication & Society (ICS)
+- 丸数字：➎(社会科学・コミュニケーション)
+- 出版社：Routledge / Taylor & Francis
+- IF (JCR/2024)：3.3
+- 5-year IF：5.6
+- SJR (2024)：2.026
+- ISSN：1369-118X (print) / 1468-4462 (electronic)
+- WoSカテゴリ：COMMUNICATION (SSCI), SOCIOLOGY (SSCI)
+- Best ranking：SOCIOLOGY 91.8%（Q1上位）
+- 出典：https://wos-journal.info/journalid/13235
+
+---
+
+# §3. ★4層投稿先誌（12誌）
+
+## §3-1. Analysis
+- 丸数字：➎(哲学)
+- 出版社：Oxford University Press
+- IF (JCR/2024)：0.54
+- SJR (2024)：0.814
+- Scimago URL：https://www.scimagojr.com/journalsearch.php?q=22103&tip=sid
+
+## §3-2. Social Epistemology
+- 丸数字：➎(哲学・社会認識論)
+- 出版社：Taylor & Francis
+- IF (JCR/2024)：1.4
+- SJR (2024)：0.492
+- Scimago URL：https://www.scimagojr.com/journalsearch.php?q=27207&tip=sid
+
+## §3-3. Thinking Skills and Creativity (TSC)
+- 丸数字：➎(教育・未来研究)
+- 出版社：Elsevier
+- IF (JCR/2024)：4.5
+- SJR (2024)：1.41
+- Scimago URL：https://www.scimagojr.com/journalsearch.php?q=5000154503&tip=sid
+
+## §3-4. Cognitive Systems Research
+- 丸数字：➍(認知科学)
+- 出版社：Elsevier
+- IF (JCR/2024)：3.42
+- SJR (2024)：0.604
+- Scimago URL：https://www.scimagojr.com/journalsearch.php?q=12886&tip=sid
+
+## §3-5. Asian Journal of Philosophy
+- 丸数字：➎(哲学)
+- 出版社：Springer
+- IF (Resurchify, 2024)：0.77（Scopus相当独自計算）
+- SJR (2024)：0.354
+- 創刊：2022年
+- Scimago URL：https://www.scimagojr.com/journalsearch.php?q=21101198455&tip=sid
+
+## §3-6. Digital War
+- 丸数字：⓿(デジタル戦争・WoS外)
+- 出版社：Palgrave Macmillan / Springer
+- IF (JCR/2024)：n/a（JCR未収録）
+- SJR：n/a（Scopus未収録）
+- ISSN：2662-1975 (print) / 2662-1983 (electronic)
+- 創刊：2020年
+- 査読期間中央値：Submission to first decision 5日
+- Downloads (2025)：54.7k
+- 索引：Baidu, CLOCKSS, CNKI, Dimensions, EBSCO, Google Scholar, Naver, OCLC, Portico, ProQuest, Wanfang, eLibrary.ru
+- 公式：https://link.springer.com/journal/42984
+
+## §3-7. Inquiry
+- 丸数字：➎(哲学)
+- 出版社：Routledge / Taylor & Francis
+- IF (JCR/2024)：0.94
+- SJR (2024)：0.848
+- Scimago URL：https://www.scimagojr.com/journalsearch.php?q=19600163000&tip=sid
+
+## §3-8. International Journal of Human-Computer Interaction (IJHCI)
+- 丸数字：➎(HCI)
+- 出版社：Taylor & Francis
+- IF (JCR/2025年6月)：4.9
+- SJR (2024)：1.175
+- Scimago URL：https://www.scimagojr.com/journalsearch.php?q=19420&tip=sid
+
+## §3-9. Global Philosophy（旧 Axiomathes）
+- 丸数字：➍(哲学)
+- 出版社：Springer
+- IF (Resurchify, 2024)：0.74
+- SJR (Resurchify, 2024)：0.261
+- SJR (CountryOfPapers)：0.213
+- Scimago URL：https://www.scimagojr.com/journalsearch.php?q=21101185842&tip=sid
+
+## §3-10. AI and Ethics
+- 丸数字：⓿(AI倫理・WoS外)
+- 出版社：Springer
+- IF (JCR/2024)：n/a（JCR未収録）
+- IF (Exaly独自計算, 2024)：6.100（JCR非公式）
+- SJR：n/a（Scopus未収録）
+- ISSN：2730-5953 (print) / 2730-5961 (electronic)
+- 創刊：2021年
+- 査読期間中央値：Submission to first decision 4日
+- Downloads (2025)：2.1M
+- 索引：ANVUR, Baidu, CLOCKSS, CNKI, DBLP, Dimensions, EBSCO, Google Scholar, INSPEC, Naver, Norwegian Register for Scientific Journals and Series, OCLC, Portico, ProQuest, Wanfang, eLibrary.ru
+- 公式：https://link.springer.com/journal/43681
+
+## §3-11. Neuroethics
+- 丸数字：➎(神経倫理)
+- 出版社：Springer
+- IF (JCR/2024)：2.6（journalsearches.com）/ 2.76（Resurchify, 2023）
+- SJR (Resurchify, 2024)：0.419
+- SJR (journalsearches.com)：0.339
+- Scimago URL：https://www.scimagojr.com/journalsearch.php?q=14300154705&tip=sid
+
+## §3-12. Cambridge Quarterly of Healthcare Ethics (CQHE)
+- 丸数字：➍(生命倫理)
+- 出版社：Cambridge University Press
+- IF (JCR/2024)：2.3
+- 5-year IF：1.9
+- SJR (2024)：0.499
+- ISSN：0963-1801 (print) / 1469-2147 (electronic)
+- WoSカテゴリ：HEALTH POLICY & SERVICES (SSCI), SOCIAL SCIENCES BIOMEDICAL (SSCI), HEALTH CARE SCIENCES & SERVICES (SCIE)
+- Best ranking：SOCIAL SCIENCES BIOMEDICAL Percentage rank 66.7%（中位）
+- OA形態：Hybrid and Open Access Support
+- 創刊：1992年
+- 出版頻度：Quarterly
+- 公式：https://www.cambridge.org/core/journals/cambridge-quarterly-of-healthcare-ethics
+- Scimago URL：https://www.scimagojr.com/journalsearch.php?q=29075&tip=sid
+- ⚠️ 注意：Cambridge UP は Episteme Vol.21-1（2024-01）から Gold OA APC £2,610化前例あり。投稿前に最新OA方針を Cambridge UP 公式で必ず確認
+
+---
+
+# §4. 教育系誌（10誌）
+
+## §4-1. Studies in Higher Education (SHE)
+- 丸数字：➎(教育)上位
+- 出版社：Routledge / Taylor & Francis
+- IF (JCR/2024)：6.46
+- SJR (2024)：1.651
+
+## §4-2. Educational Technology Research and Development (ETR&D)
+- 丸数字：➎(教育・教育技術)
+- 出版社：Springer
+- IF (JCR/2024)：6.67
+- SJR (2024)：1.429
+
+## §4-3. Innovations in Education and Teaching International (IETI)
+- 丸数字：➎(教育)中下位
+- 出版社：Routledge / Taylor & Francis（SEDA系）
+- IF (JCR/2024)：4.9
+- SJR (2024)：0.812
+- CiteScore：8.1（Education カテゴリ Q1上位93%）
+- ISSN：14703297, 14703300
+- WoS：SSCI
+- 投稿システム：ScholarOne
+- 公式：https://www.tandfonline.com/journals/riie20/about-this-journal
+- Scimago URL：https://www.scimagojr.com/journalsearch.php?q=21367&tip=sid
+- スコープ：SEDA系、教育改善・教育的変化、教職員開発、高等教育の研究・実践
+
+## §4-4. Higher Education Quarterly (HEQ)
+- 丸数字：➎(教育)中下位 / ➍境界
+- 出版社：Wiley-Blackwell
+- IF (JCR/2024)：2.3
+- SJR (2024)：0.862
+- ISSN：0951-5224 (print) / 1468-2273 (electronic)
+- WoS：ESCI - EDUCATION & EDUCATIONAL RESEARCH
+- 出版頻度：Quarterly
+- 2024年掲載数：104論文
+- h-index：53
+- 公式：https://onlinelibrary.wiley.com/journal/14682273
+- Scimago URL：https://www.scimagojr.com/journalsearch.php?q=5700153422&tip=sid
+- スコープ：高等教育における政策、リーダーシップ、ガバナンス、マネジメントに関する国際的教育研究誌
+
+## §4-5. Active Learning in Higher Education
+- 丸数字：➎(教育)上位
+- 出版社：SAGE Publications
+- IF (JCR/2024)：3.2
+- SJR (2024)：2.221
+
+## §4-6. Higher Education Research and Development (HERD)
+- 丸数字：➎(教育)
+- 出版社：Routledge / Taylor & Francis
+- IF (JCR/2024)：取得不可（wos-journal.info に表示なし、要 JCR 直接確認）
+- IF (Resurchify "Impact IF" 2024)：4.93（Scopus相当独自計算、JCR JIF とは別物）
+- SJR (2024)：1.304
+- ISSN：0729-4360 (print) / 1469-8366 (electronic)
+- WoSカテゴリ：EDUCATION & EDUCATIONAL RESEARCH (SSCI)
+- h-index：99
+- CiteScore：5.6
+- SNIP：2.39
+- 出版頻度：Bi-monthly
+- 創刊：1982年
+- 2025年出版数：171記事
+- 公式：https://www.tandfonline.com/journals/cher20/about-this-journal
+- Scimago URL：https://www.scimagojr.com/journalsearch.php?q=18300156704&tip=sid
+- OA形態：Hybrid OA（購読経路APC無料）
+- スコープ：Higher Education 全般、教育研究と実践
+
+## §4-7. Educational Philosophy and Theory (EPT/EPAT)
+- 丸数字：➎(教育)
+- 出版社：Routledge / Taylor & Francis
+- IF (JCR/2024)：1.8
+- SJR (2024)：0.765
+- ISSN：0013-1857 (print) / 1469-5812 (electronic)
+- WoSカテゴリ：EDUCATION & EDUCATIONAL RESEARCH (SSCI)
+- Best Quartile (SJR分野別)：Education Q1 / History and Philosophy of Science Q1
+- h-index：67
+- 創刊：1969年
+- 出版頻度：Monthly
+- 2024年出版数：121記事
+- 公式：https://www.tandfonline.com/journals/rept20
+- スコープ：教育哲学・教育理論、教育研究と政策の哲学的・理論的問題
+
+## §4-8. Studies in Philosophy and Education (SPE)
+- 丸数字：➎(哲学)/➍(教育)
+- 出版社：Springer Nature / Springer Netherlands
+- IF (JCR/2024)：取得不可（wos-journal.info に JIF 数値表示なし、AHCI/ESCI Arts & Humanities なら JIF 非対象の可能性）
+- SJR (journalsearches.com 2024)：0.432
+- SJR (Resurchify 2023)：0.543
+- Best Quartile (SJR分野別)：Philosophy Q1 / Education Q2
+- ISSN：0039-3746 (print) / 1573-191X (electronic)
+- h-index：38
+- 出版頻度：Bi-monthly
+- 公式：https://link.springer.com/journal/11217
+- スコープ：教育研究の方法論的問題から教育政策の実質的問題まで広範囲、philosophers / philosophers of education / educational and social science researchers / policy makers の交流促進
+- 特集予定（2025）：philosophical dimensions of AI's impact on education and learning
+
+## §4-9. Journal of Higher Education (JHE)
+- 丸数字：➎(教育)
+- 出版社：Routledge / Taylor & Francis
+- 委託元：The Ohio State University Press
+- IF (JCR/2024)：取得不可（公式 JIF 数値直接確認できず）
+- IF (Resurchify "Impact IF" 2025)：3.95（Scopus相当独自計算）
+- SJR (2024-2025)：1.207
+- Best Quartile (SJR)：Q1 (Education)
+- ISSN：0022-1546 (print) / 1538-4640 (electronic)
+- h-index：110
+- 創刊：1930年
+- 公式（T&F）：https://www.tandfonline.com/journals/uhej20
+- 公式（Ohio State Press）：https://ohiostatepress.org/JHE.html
+- Scimago URL：https://www.scimagojr.com/journalsearch.php?q=19490&tip=sid
+- OA形態：Hybrid OA (T&F Open Select)
+- スコープ：高等教育の学術研究全般、empirical, theoretically grounded work
+- ⚠️ 注意：「Comparative and international scholarship should make clear connections to the U.S. context」要件あり
+
+## §4-10. Review of Higher Education (RHE)
+- 丸数字：➎(教育)
+- 出版社：The Johns Hopkins University Press
+- 委託元：Association for the Study of Higher Education (ASHE) — RHE は ASHE official journal
+- IF (JCR/2024)：2.2（Hopkins Press公式）
+- 5-year IF：3.3（Hopkins Press公式）
+- Eigenfactor Score：0.00144（Hopkins Press公式）
+- SJR (2024)：1.187
+- Rank in Category：166 / 756 journals in "Education & Educational Research"（上位22%、概ね Q1領域）
+- WoSカテゴリ：EDUCATION & EDUCATIONAL RESEARCH
+- ISSN：0162-5748 (print) / 1090-7009 (electronic)
+- h-index：75
+- 公式：https://www.press.jhu.edu/journals/review-higher-education
+- Scimago URL：https://www.scimagojr.com/journalsearch.php?q=20738&tip=sid
+- スコープ：ASHE official journal、高等教育の論点議論全般、scholars / academic leaders / policy makers 向け
+
+---
+
+# §5. HCI系誌（6誌）
+
+## §5-1. Behaviour & Information Technology (BIT)
+- 丸数字：➍(HCI)
+- 出版社：Taylor & Francis
+- IF (JCR/2024)：4.1
+- 5-year IF：5.83
+- SJR (2024)：1.103
+- CiteScore：8.6
+- SNIP：1.569
+- JIF Best Quartile：Q2（T&F公式）
+- CiteScore Best Quartile：Q1
+- ISSN：13623001, 0144929X
+- 受入率：7-9%（T&F公式）
+- 査読期間：Submission to first decision 8-9日 / Submission to first post-review decision 84-113日
+- WoS：SSCI / SCIE
+- 投稿システム：ScholarOne
+- 公式：https://www.tandfonline.com/journals/tbit20/about-this-journal
+- Scimago URL：https://www.scimagojr.com/journalsearch.php?q=12125&tip=sid
+- スコープ：HCI、行動科学と情報技術、Computer Science / Psychology 学際領域
+
+## §5-2. Personal and Ubiquitous Computing (P&UC)
+- 丸数字：➍(HCI)
+- 出版社：Springer London
+- IF (JCR/2024)：3.006
+- SJR (2024)：0.535
+- CiteScore：7.9
+- SNIP：0.953
+- JCR Best Quartile：Q2
+- SJR Best Quartile：Q2
+- ISSN：16174909 (print) / 16174917 (electronic)
+- h-index：102
+- 出版頻度：Bimonthly
+- 創刊：1997年
+- カテゴリ：Library and Information Sciences (Q2), Computer Science Applications, Hardware and Architecture, Management Science and Operations Research
+- 公式：https://link.springer.com/journal/779
+- Scimago URL：https://www.scimagojr.com/journalsearch.php?q=22315&tip=sid
+- スコープ：ユビキタス・パーベイシブ・コンピューティング、HCI、モバイルコンピューティング、ウェアラブル、IoT、コンテキストアウェアコンピューティング、AI/HCI 学際領域
+
+## §5-3. International Journal of Human-Computer Studies (IJHCS)
+- 丸数字：➎(HCI)
+- 出版社：Academic Press / Elsevier
+- IF (JCR/2024)：5.1
+- SJR (2024)：1.394
+- Best Quartile (SJR)：Q1
+
+## §5-4. Interacting with Computers (IwC)
+- 丸数字：➍(HCI、Library&Info Sci基準)。HCI分野では➋
+- 出版社：Oxford University Press
+- IF (JCR/2024)：1.3
+- SJR (2024)：0.28
+- ISSN：0953-5438 (print) / 1873-7951 (electronic)
+- WoSカテゴリ：ERGONOMICS - SSCI / COMPUTER SCIENCE, CYBERNETICS - SCIE
+- JCR Q (2024)：Q2
+- Best Quartile (SJR分野別)：Library and Information Sciences Q2 / Software Q3 / Human-Computer Interaction Q4
+- h-index：97
+- カバレッジ：1989-2024（2015年以前 Elsevier、現在 OUP）
+- 公式：https://academic.oup.com/iwc
+- スコープ：Human-Computer Interaction、Multimedia、Usability、Knowledge Management、User Interface
+
+## §5-5. ACM Transactions on Computer-Human Interaction (TOCHI)
+- 丸数字：➎(HCI)
+- 出版社：Association for Computing Machinery (ACM)
+- IF (JCR/2024)：6.6（ACM公式、Computer Science, Cybernetics 32誌中4位）
+- 前年JCR (2023)：4.8
+- SJR (2024)：1.165
+- Best Quartile (JCR/SJR)：Q1 (両カテゴリ)
+- ISSN：1073-0516 (print) / 1557-7325 (electronic)
+- WoSカテゴリ：COMPUTER SCIENCE, CYBERNETICS - SCIE / COMPUTER SCIENCE, INFORMATION SYSTEMS - SCIE
+- h-index：110
+- 創刊：1994年
+- 公式：https://dl.acm.org/journal/tochi
+- スコープ：software, hardware and human aspects of interaction with computers
+- ⚠️ APC状況：2026年1月1日 ACM完全Open Access Publisher化実施済（公式：dl.acm.org/journal/tochi/author-guidelines / dl.acm.org/journal/tochi/open-access）
+  - 2026年APC subsidy期間：$250（ACMメンバー）/ $350（非メンバー、65%割引）
+  - subsidy外通常APC：$1,300（ACMメンバー）/ $1,800（非メンバー）
+  - ACM Open参加機関なら APC無料、参加機関は2,600+で大学・研究機関中心
+  - **APC無料原則の研究者は原則投稿不能**
+
+## §5-6. Computer Supported Cooperative Work (CSCW)
+- 丸数字：➍(HCI・集団協調)
+- 出版社：Springer Netherlands
+- IF (JCR/2024)：取得不可（journalsearches.com / Resurchify いずれにも公式数値表示なし）
+- IF (Resurchify "Impact IF" 2024)：4.35（Scopus相当独自計算）
+- SJR (Resurchify 2025)：0.549
+- SJR (journalsearches.com 2024)：0.544
+- Best Quartile (SJR)：Q2 (Computer Science miscellaneous)
+- ISSN：0925-9724 (print) / 1573-7551 (electronic)
+- h-index：75
+- CiteScore：5.6
+- SNIP：1.37
+- 出版頻度：Bi-monthly
+- 創刊：1992年
+- 2024年出版数：24記事
+- 公式：https://link.springer.com/journal/10606
+- Scimago URL：https://www.scimagojr.com/journalsearch.php?q=24304&tip=sid
+- スコープ：CSCW、theoretical/practical/technical/social issues、ethnographic fieldwork、empirical evaluations、technical/conceptual frameworks for practice-oriented computing
+- 注意：本誌は ACM Conference CSCW のproceedings（別記録）とは別誌
+
+---
+
+# §6. 哲学系誌（10誌）
+
+## §6-1. Erkenntnis
+- 丸数字：➎(哲学・認識論・科学哲学)
+- 出版社：Springer Netherlands
+- IF (Springer公式 2024)：1.7
+- SJR (2024)：0.945
+- ISSN：0165-0106 (print) / 1572-8420 (electronic)
+- カテゴリ：Logic (Q1) / Philosophy (Q1)
+- h-index：51
+- 創刊：1930年（再開 1975年）
+- 出版頻度：n/a
+- 査読期間中央値：Submission to first decision 7日
+- Downloads (2025)：186.6k
+- 公式：https://link.springer.com/journal/10670
+- Scimago URL：https://www.scimagojr.com/journalsearch.php?q=4700152618&tip=sid
+- スコープ：scientific philosophy、認識論、論理学、数学哲学、言語哲学、心の哲学、存在論、形而上学、実践哲学
+
+## §6-2. Philosophical Psychology
+- 丸数字：➎(哲学・心の哲学)
+- 出版社：Routledge / Taylor & Francis
+- IF (Resurchify 2024)：1.92
+- SJR (2024)：0.809
+- ISSN：0951-5089 (print) / 1465-394X (electronic)
+- カテゴリ：Philosophy (Q1)
+- h-index：58
+- 創刊：1988年
+- 公式：https://www.tandfonline.com/journals/cphp20/about-this-journal
+- Scimago URL：https://www.scimagojr.com/journalsearch.php?q=12824&tip=sid
+- スコープ：心の哲学、認知科学の哲学、心理学の哲学、神経哲学、意識研究、自由意志・行為論
+
+## §6-3. Journal of Theoretical and Philosophical Psychology
+- 丸数字：➍-➌(哲学・心の哲学) — Q1名目だが SJR 0.352 で実質Q2-Q3
+- 出版社：American Psychological Association (APA)
+- IF (Resurchify 2024)：1.15
+- SJR (2024)：0.352
+- ISSN：1068-8471
+- h-index：30
+- 創刊：1986年
+- Scimago URL：https://www.scimagojr.com/journalsearch.php?q=19500157012&tip=sid
+- スコープ：理論心理学、哲学的心理学、現象学的心理学、解釈学的アプローチ
+
+## §6-4. Theoria（A Swedish Journal of Philosophy）
+- 丸数字：➎(哲学)
+- 出版社：John Wiley & Sons / Wiley-Blackwell（Stiftelsen Theoria 委託）
+- IF (JCR/2024)：取得不可（AHCI/ESCI Arts & Humanities なら JIF 非対象の可能性、wos-journal.info に表示なし）
+- SJR (2024)：0.335
+- ISSN：0040-5817 (print) / 1558-5816 (electronic)
+- 編集長：Sven Ove Hansson
+- h-index：22
+- SNIP：1.09
+- 創刊：1935年
+- 出版頻度：Quarterly
+- カバレッジ：1935-2025
+- 公式：https://onlinelibrary.wiley.com/journal/17552567
+- スコープ：全分野の哲学、analytic / continental の対話を促進、論文・レビュー・短いノート/ディスカッション
+
+## §6-5. Ratio
+- 丸数字：➎(哲学・analytic)
+- 出版社：Wiley-Blackwell
+- IF (JCR/2024)：取得不可（AHCI/ESCI Arts & Humanities 収録の可能性、JIF 非対象の可能性）
+- SJR (Resurchify 2023)：0.571
+- 11年平均SJR：0.6
+- ISSN：0034-0006 (print) / 1467-9329 (electronic)
+- 編集長：David S. Oderberg (University of Reading)
+- カテゴリ：Philosophy (Q1)
+- h-index：39
+- 出版頻度：Quarterly + special issue in December
+- 公式：https://onlinelibrary.wiley.com/journal/14679329
+- スコープ：International analytic philosophy、philosophical rigour と幅広い読者層へのアクセシビリティを両立
+
+## §6-6. Australasian Journal of Philosophy (AJP/AuJP)
+- 丸数字：➎(哲学・analytic)
+- 出版社：Routledge / Taylor & Francis（Australasian Association of Philosophy 委託）
+- IF (journalmetrics.org 参考値)：1.4 — ⚠️ AHCI 収録のため親規定上 JIF 非対象、JCR 公式直接確認推奨
+- SJR (Resurchify 2023)：1.302
+- ISSN：0004-8402 (print) / 1471-6828 (electronic)
+- WoS：AHCI（Arts and Humanities Citation Index）収録
+- カテゴリ：Philosophy (Q1)
+- h-index：53
+- 創刊：1923年（原名 The Australasian Journal of Psychology and Philosophy、1947年現名）
+- 出版頻度：Quarterly
+- 査読：Double anonymized peer review
+- 公式：https://www.tandfonline.com/journals/rajp20 / https://aap.org.au/AJP
+- スコープ：analytic tradition の最良作品、哲学全般の高品質研究
+- 受賞：AAP-Routledge Best Paper Award
+
+## §6-7. Mind
+- 丸数字：⓿(哲学トップティア・AHCI Q判定なし)
+- 出版社：Oxford University Press（on behalf of Mind Association）
+- IF (journalsearches.com 2024)：1.6 — ⚠️ AHCI のため Clarivate公式で Quartile/Percentile/Rank非付与
+- SJR (2024)：1.978
+- ISSN：0026-4423 (print) / 1460-2113 (electronic)
+- WoS：AHCI（PHILOSOPHY）
+- 索引：UGC CARE, Scopus, AHCI
+- h-index：71
+- CiteScore：4.1
+- SNIP：5.14
+- 出版頻度：Quarterly
+- 創刊：1876年
+- 2025年出版数：60記事
+- 編集：Mind Association（University of Oxford / University College London 共同）
+- 公式：https://academic.oup.com/mind
+- スコープ：epistemology, metaphysics, philosophy of language, philosophy of logic, philosophy of mind 中心、analytic tradition の代表誌
+- OA形態：hybrid OA（購読経路投稿可、APC不要）
+
+## §6-8. Noûs
+- 丸数字：⓿(哲学トップティア・AHCI Q判定なし、最高位群)
+- 出版社：John Wiley and Sons (Wiley-Blackwell)
+- IF (JCR/2024)：取得不可（公式ソース確認できず）
+- SJR (2024)：2.795
+- ISSN：0029-4624 (print) / 1468-0068 (electronic)
+- WoS：AHCI（PHILOSOPHY）
+- カテゴリ：Philosophy (Q1)
+- h-index：88
+- 公式：https://onlinelibrary.wiley.com/journal/14680068
+- スコープ：哲学全分野＋哲学史にわたる standalone, substantial contributions
+- OA形態：hybrid OA、Gold OA APC：$2,760 USD / £1,840 GBP / €2,330 EUR（購読経路選択時APC不要）
+
+## §6-9. The Philosophical Review
+- 丸数字：⓿(哲学トップティア・AHCI Q判定なし)
+- 出版社：Duke University Press（since September 2006）
+- 編集：Cornell University Sage School of Philosophy
+- IF (journalsearches.com 2024)：2.8 — ⚠️ AHCI のため Clarivate公式で Quartile/Percentile/Rank非付与
+- SJR (2024)：1.771
+- ISSN：0031-8108 (print) / 1558-1470 (electronic)
+- WoS：AHCI（PHILOSOPHY）
+- 索引：UGC CARE, Scopus, AHCI
+- h-index：70
+- CiteScore：4.1
+- SNIP：4.76
+- 出版頻度：Quarterly
+- 創刊：1892年
+- 2025年出版数：44記事
+- 公式：https://www.dukeupress.edu/the-philosophical-review
+- Scimago URL：https://www.scimagojr.com/journalsearch.php?q=26107&tip=sid
+- APC：無料（no fees payable）
+- スコープ：analytic philosophy 全領域、material of general interest to academic philosophers、book reviews 掲載
+- 著名掲載：Quine "Two Dogmas of Empiricism", Nagel "What Is It Like to Be a Bat?", Rawls 初期作品
+
+## §6-10. The Journal of Philosophy
+- 丸数字：⓿(哲学トップティア・AHCI Q判定なし)
+- 出版社：Journal of Philosophy, Inc.（Columbia University 系の独立非営利）
+- IF (JCR/2024)：取得不可
+- SJR (2024)：1.145
+- ISSN：0022-362X (print) / 1939-8549 (electronic)
+- WoS：AHCI（PHILOSOPHY）
+- カテゴリ：Philosophy (Q1)
+- h-index：66
+- カバレッジ：1977, 1980, 1989-1990, 2002-2021, 2023-2024
+- Scimago URL：https://www.scimagojr.com/journalsearch.php?q=24826&tip=sid
+- APC：無料（no fees payable）
+- スコープ：analytic philosophy の old guard 誌、20世紀分析哲学の重要論文を多数掲載、短い inquiry note 含む論文を扱う
+
+---
+
+# §7. 神経倫理系誌（3誌）
+
+## §7-1. AJOB Neuroscience
+- 丸数字：⓿(SJR Q2/神経倫理) — JCR JIF取得不可、SJR基準なら➍
+- 出版社：Taylor and Francis Inc.
+- IF (JCR/2024)：取得不可（公式ソース未確認）
+- SJR (2024)：0.841
+- CiteScore：8.1
+- SNIP：0.89
+- ISSN：2150-7740 (print) / 2150-7759 (electronic)
+- 誌コード：uabn20
+- h-index：34
+- Best Quartile (SJR)：Q2 (Neuroscience miscellaneous)
+- 索引：UGC CARE, Scopus, PubMed, Embase
+- 創刊：2010年
+- 出版頻度：Quarterly
+- 公式：https://www.tandfonline.com/journals/uabn20/about-this-journal
+- Scimago URL：https://www.scimagojr.com/journalsearch.php?q=19700187604&tip=sid
+- スコープ：神経倫理（脳神経科学の倫理・社会・法的次元）、target articles + peer commentary 形式
+
+## §7-2. Cognitive Neuropsychiatry (CogNP)
+- 丸数字：➍(神経倫理・精神医学)
+- 出版社：Routledge / Taylor & Francis
+- IF (JCR/2024)：1.5
+- SJR (2024)：0.652
+- SJR (journalsearches.com)：0.6
+- CiteScore：2.7
+- SNIP：0.78
+- ISSN：1354-6805 (print) / 1464-0619 (electronic)
+- WoSカテゴリ：PSYCHIATRY - SSCI / PSYCHIATRY - SCIE
+- JCR Q (2024)：Q2（journalsearches.com / Resurchify、ただし Researcher.life は Q3 と表記、不一致あり）
+- h-index：70
+- 創刊：1996年
+- 2024年出版数：26記事
+- 公式：https://www.tandfonline.com/journals/pcnp20
+- Scimago URL：https://www.scimagojr.com/journalsearch.php?q=12870&tip=sid
+- スコープ：認知精神医学、認知神経科学的アプローチによる精神病理学
+
+## §7-3. Frontiers in Human Neuroscience
+- 丸数字：➍(神経倫理・脳科学)
+- 出版社：Frontiers Media SA
+- IF (JCR/2024)：2.7
+- SJR (2024)：0.904
+- ISSN：1662-5161
+- WoSカテゴリ：PSYCHOLOGY - SCIE / NEUROSCIENCES - SCIE
+- JCR Q (2024)：Q2
+- Best Quartile (SJR分野別)：Behavioral Neuroscience Q2 / Neurology Q2 / Neuropsychology and Physiological Psychology Q2 / Psychiatry and Mental Health Q2 / Biological Psychiatry Q3
+- h-index：168
+- 創刊：2008年
+- 公式：https://www.frontiersin.org/journals/human-neuroscience
+- Scimago URL：https://www.scimagojr.com/journalsearch.php?q=15436&tip=sid
+- ⚠️ APC状況：完全Gold OA、APC 3,150 CHF 必須（Waiverは途上国向けのみ）。**APC無料原則の研究者は投稿不能**
+
+---
+
+# §8. 生命倫理系誌（5誌）
+
+## §8-1. Journal of Medical Ethics (JME)
+- 丸数字：➎(生命倫理)
+- 出版社：BMJ Publishing Group（Institute of Medical Ethics と BMJ の共同所有）
+- IF (JCR/2024)：3.4
+- SJR (2024)：0.98
+- ISSN：0306-6800 (print) / 1473-4257 (electronic)
+- h-index：93
+- Best Quartile (SJR)：Q1
+- 創刊：1975年
+- 出版頻度：Monthly
+- スコープ：生命倫理学全般、医療倫理、研究倫理、公衆衛生倫理
+- Scimago URL：https://www.scimagojr.com/journalsearch.php?q=15962&tip=sid
+- OA形態：BMJ系（hybrid + transformative agreement）
+
+## §8-2. American Journal of Bioethics (AJOB)
+- 丸数字：➎(生命倫理)
+- 出版社：Routledge / Taylor & Francis
+- IF (JCR/2024)：20.8（journalsearches.com、要 Clarivate JCR 公式での再確認）
+- SJR (2024)：1.284
+- ISSN：1526-5161 (print) / 1536-0075 (electronic)
+- WoSカテゴリ：SOCIAL ISSUES - SSCI / ETHICS - SSCI / SOCIAL SCIENCES, BIOMEDICAL - SSCI / MEDICAL ETHICS - SCIE（4カテゴリ収録）
+- JCR Q (2024)：Q1
+- Best Quartile (SJR分野別)：Health Policy Q1 / Issues, Ethics and Legal Aspects Q1
+- h-index：76
+- CiteScore：9.7
+- SNIP：1.65
+- カバレッジ：2001-2025
+- 公式：https://www.tandfonline.com/journals/uajb20/about-this-journal
+- OA形態：hybrid open access (Taylor & Francis Open Select)、購読経路APC無料
+- スコープ：Bioethics全般、CRISPR / 人工知能 / 医療倫理 / 臨床試験 / 公衆衛生 / 研究倫理
+
+## §8-3. Hastings Center Report (HCR)
+- 丸数字：➎(生命倫理)
+- 出版社：Wiley-Blackwell（on behalf of The Hastings Center for Bioethics）
+- IF (JCR/2024)：2.3
+- SJR (2024)：0.498
+- ISSN：0093-0334 (print) / 1552-146X (electronic)
+- WoSカテゴリ：ETHICS - SSCI / SOCIAL SCIENCES, BIOMEDICAL - SSCI / MEDICAL ETHICS - SCIE / HEALTH CARE SCIENCES & SERVICES - SCIE（4カテゴリ収録）
+- JCR Q (2024)：Q1（過去 Medical Ethics 16誌中5位）
+- h-index：76
+- 出版頻度：Bimonthly（年6号）
+- 創刊：1971年
+- 編集長：Gregory E. Kaebnick（Hastings Center）
+- 編集副：Laura Haupt
+- Scimago URL：https://www.scimagojr.com/journalsearch.php?q=13318&tip=sid
+- 公式：https://onlinelibrary.wiley.com/journal/1552146x
+- スコープ：ethical, legal, and social issues in medicine, health care, public health, and the life sciences、philosophical/ethical 論考、実証研究、provocative essays、ケーススタディ、患者ナラティブ、book reviews
+
+## §8-4. Theoretical Medicine and Bioethics (TMB)
+- 丸数字：➌(生命倫理) ※Q判定3ソース不一致あり
+- 出版社：Springer Science and Business Media B.V. / Springer Nature
+- IF (JCR/2024)：1.5
+- SJR (Resurchify 2025)：0.345
+- SJR (researchjournalrank.com)：0.373
+- SJR (ResearchBite 2023)：0.460
+- ISSN：1386-7415 (print) / 1573-1200 (electronic)
+- WoSカテゴリ：ETHICS - SSCI / SOCIAL SCIENCES, BIOMEDICAL - SSCI / SOCIAL ISSUES - SSCI（3カテゴリ収録）
+- Best Quartile (SJR分野別)：Resurchify Q3 / Researcher.life Q2 / journalimpact.org Q4（不一致あり、Resurchify を一次基準として Q3 採用）
+- h-index：46
+- 創刊：1980年（原名 "Theoretical Medicine"、後に改称）
+- 公式：https://link.springer.com/journal/11017
+- 編集：Daniel P. Sulmasy（Georgetown University）/ Lynn A. Jansen / David T. Ozar
+- 関連：American Society for Humanities + Bioethics 公式パートナー誌
+- スコープ：clinical judgment and reasoning, medical concepts such as health and disease, philosophical basis of medical science, philosophical ethics of health care and biomedical research
+
+## §8-5. Cambridge Quarterly of Healthcare Ethics (CQHE) → §3-12 参照
+
+---
+
+# §9. AI倫理系誌（4誌）
+
+## §9-1. Minds and Machines
+- 丸数字：➎(AI・哲学)
+- 出版社：Springer Netherlands
+- IF (JCR/2024-2025年6月)：3.4
+- SJR (2024)：1.339
+- CiteScore：8.4
+- SNIP：3.25
+- ISSN：0924-6495 (print) / 1572-8641 (electronic)
+- WoS：SCIE
+- カテゴリ：Artificial Intelligence Q1 / Philosophy Q1
+- h-index：56
+- 創刊：1991年
+- 出版頻度：Quarterly
+- Scimago URL：https://www.scimagojr.com/journalsearch.php?q=24777&tip=sid
+- スコープ：AI/認知科学/言語/論理/心の哲学、AI倫理、機械学習の哲学的基礎
+
+## §9-2. AI and Society
+- 丸数字：➎(AI/HCI・ESCI)
+- 出版社：Springer London
+- IF (JCR/2024)：4.7
+- SJR (2024)：1.208
+- CiteScore：9.8
+- SNIP：2.364
+- ISSN：0951-5666 (print) / 1435-5655 (electronic)
+- WoS：ESCI - COMPUTER SCIENCE, ARTIFICIAL INTELLIGENCE
+- カテゴリ：Philosophy Q1
+- h-index：55
+- 創刊：1986年
+- 出版頻度：Quarterly
+- 公式：https://link.springer.com/journal/146
+- Scimago URL：https://www.scimagojr.com/journalsearch.php?q=23616&tip=sid
+- スコープ：AI と社会、文化、コミュニケーション、倫理、哲学、HCI、政策。Knowledge, Culture and Communication が副題
+- 構造：a) Research / b) Open Forum / c) Curmudgeon Corner / d) Reviews
+
+## §9-3. Big Data & Society (BD&S)
+- 丸数字：➎(AI倫理)
+- 出版社：SAGE Publications
+- IF：journalsinsights.com「9.2」(2026-2027版表記、要警戒)、2020年公式blog「5.987」、最新値は要 Clarivate公式確認
+- SJR (2024)：2.207
+- Best Quartile (SJR分野別)：Communication Q1 / Computer Science Applications Q1 / Information Systems Q1 / Information Systems and Management Q1 / Library and Information Sciences Q1（5カテゴリすべてで Q1）
+- ISSN：2053-9517（electronic only）
+- h-index：78
+- 創刊：2014年
+- 公式：https://journals.sagepub.com/home/bds
+- Author Instructions：https://journals.sagepub.com/author-instructions/bds
+- 査読：Double anonymized（triple peer review）
+- スコープ：Big Data の社会的影響を社会科学・人文学・コンピューティング横断、ethics & governance / social & cultural impact / methodologies
+- ⚠️ APC状況：完全Gold OA、APC 2,250 USD（2026-05時点）。Original Research Articles は APC必須（2020年1月以降）。Editor commissioned articles, Commentaries, Editorials, Demos は APC waived。**Original Research Article として APC無料原則の研究者は投稿不能**
+
+## §9-4. Journal of Responsible Technology (JoRT)
+- 丸数字：➎(AI倫理)
+- 出版社：Elsevier Ltd（Elsevier系新興誌）
+- IF (JCR/2024)：取得不可（h-index 13、カバレッジ2020-2025、ESCI 段階または未収録の可能性高）
+- SJR (2024)：0.956
+- Best Quartile (SJR)：Q1
+- ISSN：2666-6596（electronic only）
+- h-index：13
+- カバレッジ：2020-2025
+- 公式：https://www.sciencedirect.com/journal/journal-of-responsible-technology
+- Scimago URL：https://www.scimagojr.com/journalsearch.php?q=21101169875&tip=sid
+- スコープ：責任ある技術開発、AI倫理、技術の社会的・倫理的・経済的・地政学的・環境的影響、量子技術、AI、デジタル技術等
+- ⚠️ APC状況：要追加確認（Elsevier 公式 Open Access options ページで投稿前直接確認必須）
+
+---
+
+# §10. 規制ガバナンス系誌（5誌）
+
+## §10-1. Policy Sciences
+- 丸数字：➍(規制ガバナンス)
+- 出版社：Springer Netherlands
+- IF (JCR/2024)：3.7（Springer公式）
+- 5-year IF：4.4（Springer公式）
+- SJR (Resurchify 2024)：1.635
+- SJR (askbisht.com)：1.217
+- 11年SJR範囲：0.859 (2016最低) ～ 1.661 (2021最高)
+- ISSN：0032-2687 (print) / 1573-0891 (electronic)
+- h-index：72
+- 出版頻度：Quarterly
+- 査読期間中央値：Submission to first decision 6日（Springer公式）
+- Downloads (2025)：501.5k（Springer公式）
+- Scimago URL：https://www.scimagojr.com/journalsearch.php?q=22773&tip=sid
+- 公式：https://link.springer.com/journal/11077
+- スコープ：政策科学（Lasswell/McDougal の伝統）、政策過程の規範的側面、controversial analyses、特集号
+
+## §10-2. Journal of Public Policy (JoPP)
+- 丸数字：➎(規制ガバナンス)
+- 出版社：Cambridge University Press
+- IF (JCR/2024)：2.1
+- SJR (2024)：0.964
+- JCR Q (2024)：Q1
+- ISSN：0143-814X (print) / 1469-7815 (electronic)
+- 索引：SSCI, Scopus, ABDC, UGC CARE
+- 編集長：Anthony Bertelli, Valentina Mele
+- 公式：https://www.cambridge.org/core/journals/journal-of-public-policy
+- Scimago URL：https://www.scimagojr.com/journalsearch.php?q=27691&tip=sid
+- 主要寄稿者（歴史）：Richard Rose, Rudolf Klein, B. Guy Peters, Robert E. Goodin
+- ⚠️ APC状況：要警戒。Cambridge UP の Episteme 前例（Vol.21-1 [2024-01] から Gold OA APC £2,610 化）あり、JoPP も同様の Gold OA 移行リスクあり。**投稿前に Cambridge公式で必ず最新APC状況確認**
+
+## §10-3. Governance: An International Journal of Policy, Administration, and Institutions
+- 丸数字：➎(規制ガバナンス)
+- 出版社：Wiley-Blackwell（in association with International Political Science Association's Research Committee on the Structure & Organization of Government [SOG]）
+- IF (JCR/2024)：取得不可（公式数値直接確認できず）
+- IF (Resurchify "Impact IF" 2024)：4.65（Scopus相当独自計算）
+- SJR (Resurchify 2024)：1.426
+- JCR Q (2024)：Q1（Researcher.life / Resurchify 確認）
+- ISSN：0952-1895 (print) / 1468-0491 (electronic)
+- WoSカテゴリ：POLITICAL SCIENCE - SSCI / PUBLIC ADMINISTRATION - SSCI
+- h-index：99
+- CiteScore：5.4
+- SNIP：2.45
+- 出版頻度：Quarterly
+- 創刊：1988年
+- 2024年出版数：66記事
+- Scimago URL：https://www.scimagojr.com/journalsearch.php?q=19088&tip=sid
+- 公式：https://onlinelibrary.wiley.com/journal/14680491
+- スコープ：executive politics, public policy, administration, organization of the state、theory & empirical research、IPSA SOG との関連
+- ⚠️ APC状況：投稿前に Wiley 公式の Open Access options 確認推奨（Wiley は近年 hybrid OA / Gold OA 移行を進めている）
+
+## §10-4. Public Administration Review (PAR)
+- 丸数字：➎(規制ガバナンス・公共政策)
+- 出版社：Wiley-Blackwell（on behalf of American Society for Public Administration [ASPA]）
+- IF (JCR/2024)：4.9
+- SJR (Resurchify 2025)：2.964
+- 11年SJR範囲：1.735 (2014最低) ～ 4.120 (2018最高)
+- JCR Q (2024)：Q1
+- ISSN：0033-3352 (print) / 1540-6210 (electronic)
+- WoSカテゴリ：PUBLIC ADMINISTRATION - SSCI
+- 編集長：Jeremy L. Hall（University of Central Florida）
+- h-index：186
+- 出版頻度：Bi-monthly
+- 創刊：1940年
+- カバレッジ：1978-1983, 1985, 1988, 1996-2025
+- Scimago URL：https://www.scimagojr.com/journalsearch.php?q=17167&tip=sid
+- 公式：https://onlinelibrary.wiley.com/journal/15406210
+- スコープ：the premier journal in the field of public administration research, theory, and practice、academics と practitioners 双方向け
+- ⚠️ APC状況：askbisht.com 表記「A Open Access journal in Business, Management and Accounting, Social Sciences, Marketing」あり、Wiley公式での hybrid OA / 完全Gold OA 区別未確定。**投稿前に Wiley 公式の Open Access options ページで直接確認必須**
+
+## §10-5. Internet Policy Review (IPR)
+- 丸数字：➎(規制ガバナンス・インターネット規制)
+- 出版社：Alexander von Humboldt Institute for Internet and Society (HIIG)
+- IF (JCR/2024)：3.2
+- SJR (2024)：1.263
+- JCR Q (2024)：Q1
+- ISSN：2197-6775（electronic only）
+- h-index：39
+- 創刊：2012年
+- 公式：https://policyreview.info / https://www.hiig.de/en/project/internet-policy-review/
+- Scimago URL：https://www.scimagojr.com/journalsearch.php?q=21100898535&tip=sid
+- スコープ：news and analytics service、development of online regulations and internet guidelines、AI ガバナンス、デジタル規制、プラットフォーム規制、ネット中立性等
+- サブタイトル：Journal on Internet regulation
+- ⚠️ APC状況：journalsearches.com 表記「Based on the Official Journal Homepage, the internet policy review does not charge any publication fee」 — Diamond OA（著者にも読者にも無料）の可能性が高い。**投稿前に policyreview.info / hiig.de の公式直接確認必須**。完全OA特性のため、AI検出・OA系特有のDR傾向への警戒は別途必要
+
+---
+
+# §11. 未来研究系誌（4誌）
+
+## §11-1. Foresight
+- 丸数字：➍(未来研究、SJR Q1名目だが実質Q2帯)
+- 出版社：Emerald Publishing
+- IF (JCR/2024)：取得不可（Emerald公式に JCR JIF 表示なし）
+- SJR (Resurchify 2024)：0.625
+- 11年平均SJR：1.93（近年低下傾向）
+- Best Quartile (SJR分野別)：Economics, Econometrics and Finance miscellaneous Q1（名目）/ Business and International Management Q2 / Management of Technology and Innovation Q2 / Management Science and Operations Research Q2
+- ISSN：1463-6689 (print) / 1465-9832 (electronic)
+- 誌コード：fs
+- h-index：44
+- 創刊：1999年
+- 出版頻度：Bi-monthly
+- 副題：The Journal of Futures Studies, Strategic Thinking and Policy
+- 公式：https://www.emeraldgrouppublishing.com/journal/fs
+- Scimago URL：https://www.scimagojr.com/journalsearch.php?q=16106&tip=sid
+- スコープ：未来研究のフレームワーク・技術、傾向と推進力理解、代替未来探求、優先順位設定、行動戦略策定、socio-technological innovations
+
+## §11-2. Futures and Foresight Science (F&FS)
+- 丸数字：➍(未来研究)
+- 出版社：John Wiley and Sons
+- IF (JCR/2024)：取得不可
+- SJR (2024)：0.776
+- Best Quartile (SJR)：Q2 (Business, Management and Accounting misc / Management Science and Operations Research / Strategy and Management)
+- 創刊：2019年（新興誌）
+- スコープ：未来研究、Strategy & Management、Foresight Science
+
+## §11-3. Journal of Futures Studies (JFS)
+- 丸数字：➌(未来研究)
+- 出版社：Tamkang University Press（Graduate Institute of Futures Studies）
+- IF (JCR/2024)：取得不可（公式 "Q2 in Clarivate JCR" 表記あるが具体的JIF数値未確認）
+- SJR (Resurchify 2024)：0.297
+- CiteScore：1.3
+- SNIP：0.75
+- ISSN：1027-6084
+- 索引：Web of Science Emerging Sources Citation Index (ESCI), Scopus
+- Best Quartile (SJR分野別)：History and Philosophy of Science Q2 / Decision Sciences misc Q3 / Development Q3
+- h-index：27
+- 創刊：1996年
+- 出版頻度：Quarterly（2月/5月/8月/11月）
+- 公式：https://jfsdigital.org/
+- Scimago URL：https://www.scimagojr.com/journalsearch.php?q=300147003&tip=sid
+- スコープ：学際的未来研究、futures-oriented research、Futures Studies/Foresight の知識基盤
+
+## §11-4. Technological Forecasting and Social Change (TFSC)
+- 丸数字：➎(未来研究・Business)
+- 出版社：Elsevier Inc.
+- IF (JCR/2024)：13.3
+- SJR (2024)：3.472
+- JCR Q (2024)：Q1（Business / Regional & Urban Planning 両カテゴリ）
+- ISSN：0040-1625 (print) / 1873-5509 (electronic)
+- WoSカテゴリ：BUSINESS - SSCI / REGIONAL & URBAN PLANNING - SSCI
+- h-index：209
+- 出版頻度：月刊
+- 創刊：1969年
+- 編集長：Mei-Chih Hu（National Tsing Hua University）/ Luca Mora（Edinburgh Napier University）
+- 公式：https://www.sciencedirect.com/journal/technological-forecasting-and-social-change
+- Scimago URL：https://www.scimagojr.com/journalsearch.php?q=14704&tip=sid
+- スコープ：major forum for the methodology and practice of technological forecasting and future studies as planning tools、社会・環境・技術要因の相互作用
+- ⚠️ APC状況：SciDir公式「Article Publishing Charge (APC): USD 3,840 (excluding taxes)」表記、続いて「No publication fee charged to authors, and published articles are immediately available to subscribers」表記 — hybrid OA、subscription経路で投稿可能（購読経路選択時APC無料）と推定。**投稿前に Elsevier 公式の Open Access options ページで再確認推奨**
+
+## §11-5. European Journal of Futures Research (EJFR)
+- 丸数字：➎(未来研究)
+- 出版社：Springer Nature（SpringerOpen ブランド）
+- 提携：World Futures Studies Federation
+- IF (JCR/2024)：3.7（Springer公式）
+- 5-year IF：3.7（Springer公式）
+- SJR (2024)：1.014（Springer公式 / Resurchify 一致）
+- Best Quartile (SJR)：Q1（Resurchify 2024、Researcher.life は Q2、不一致）
+- SNIP：1.359（Springer公式）
+- ISSN：2195-2248 (print) / 2195-4194 (electronic)
+- 創刊：2013年
+- 査読期間：Submission to first decision 19日中央値 / Submission to acceptance 111日中央値
+- 2024年ダウンロード：257,122回
+- 公式：https://eujournalfuturesresearch.springeropen.com/
+- スコープ：未来研究全般、World Futures Studies Federation 提携
+- ⚠️ APC状況：完全Gold OA（SpringerOpen）、APC £1,140 / $1,790 / €1,490 必須（Springer公式 fees-and-funding 確認）。Waiverは最低所得国向けのみ。**APC無料原則の研究者は投稿不能**
+
+---
+
+# §12. 凡例・記号体系
+
+## §12-1. 丸数字（分野内Quartile）
+
+| 記号 | 意味 |
+|---|---|
+| ➎ | 分野内 Q1 |
+| ➍ | 分野内 Q2 |
+| ➌ | 分野内 Q3 |
+| ➋ | 分野内 Q4 |
+| ➊ | 索引外（PhilPapers / Google Scholar のみなど） |
+| ⓿ | WoS/Scopus 未収録、新興誌、CFP 個別募集など Quartile 確定不能。または AHCI/ESCI Arts & Humanities 収録誌で JCR Q判定非付与 |
+
+分野内Q主義の根拠：JCR Q1 と SJR Q1 の絶対値は分野で大きく異なる（Analysis IF 0.54 ≠ NM&S IF 5.75）。分野内Q主義により、AHCI 収録誌（JCR JIF 非対象）も SJR ベースで丸数字付与可能。
+
+## §12-2. 投稿運用フラグ
+
+- **⚠️ APC衝突・投稿不能**：完全Gold OAでAPC必須、APC無料原則の研究者は投稿不能
+- **⚠️ 要追加確認**：APCポリシー未確定、投稿前に出版社公式での直接確認必須
+- **⚠️ 投稿候補非推奨**：predatory journal疑惑、品質シグナル極低など、★4論文不適合
+
+## §12-3. データソース注意
+
+- JCR JIF と Resurchify "Impact IF" は別物：Resurchify の "Impact IF" は Scopus CiteScore 相当の独自計算値
+- AHCI 収録誌は JCR JIF 評価対象外：Phil & Tech、Mind、Noûs、Phil Review、J Philosophy 等
+- Clarivate 2024年JCR方針：「the 25 arts and humanities categories in AHCI and ESCI will not receive a rank, quartile or percentile going forward」
+- Scimago URL を一次基準として確認：ただし403エラーで fetch できないケースあり、Resurchify / journalsearches.com / askbisht.com / 出版社公式メトリクスを相互照合
+- 新興誌（2020年以降創刊）はデータが揃わない：Digital War、AI and Ethics、Futures and Foresight Science、Journal of Responsible Technology が該当。Scopus収録から Scimago カテゴリ確定まで2-3年のラグがある模様
+
+## §12-4. 投稿不能誌・要警戒誌・非推奨誌の運用
+
+**投稿不能（4誌）**：
+- Frontiers in Human Neuroscience（APC 3,150 CHF 必須）
+- Big Data & Society（APC 2,250 USD 必須、Original Research）
+- European Journal of Futures Research（APC £1,140/$1,790/€1,490 必須）
+- TOCHI（2026年完全OA移行確定、ACM Open非参加機関は事実上投稿不能）
+
+**要追加確認（2誌）**：
+- Journal of Responsible Technology（APCポリシー未確認）
+- Internet Policy Review（Diamond OA可能性、要公式直接確認）
+
+**要警戒（複数）**：
+- Journal of Public Policy（Cambridge UP前例：Episteme Gold OA移行）
+- Public Administration Review（askbisht.com「Open Access journal」表記、Wiley公式直接確認必須）
+- Cambridge Quarterly of Healthcare Ethics（Cambridge UP前例同上）
+
+**投稿候補非推奨（2誌）**：
+- International Journal of Higher Education（Sciedu Press、Beall's List系 predatory journal疑惑）
+- International Journal of Human Factors and Ergonomics（Inderscience、SJR Q4・h-index 9で創刊13年経過、★4論文不適合）
+
+---
+
+# Appendix. 検索効率化のための一覧
+
+## 出版社別索引
+
+- **Springer / Springer Nature**：Synthese, EIT, Phil & Tech, JBI, Asian J Phil, Digital War, Global Philosophy, AI and Ethics, Neuroethics, Erkenntnis, SPE, Minds and Machines, AI and Society, Policy Sciences, EJFR, TMB, P&UC, CSCW
+- **Wiley / Wiley-Blackwell**：Reg & Gov, Bioethics, F&FS, CQHE（CUP系）, HEQ, Theoria, Ratio, Noûs, HCR, Governance, PAR
+- **Routledge / Taylor & Francis**：Death Studies, ICS, Inquiry, IJHCI, Social Epistemology, Innovations in E&T, BIT, AJOB Neuroscience, AuJP, EPT, HERD, JHE, Philosophical Psychology, AJOB, CogNP, JFS（Tamkang U・別出版）
+- **Elsevier**：Futures, Language Sciences, TSC, Cognitive Sys Res, IJHCS, JoRT, TFSC
+- **Sage**：NM&S, Active Learning in HE, BD&S
+- **Oxford University Press**：Analysis, Mind, Interacting with Computers
+- **Cambridge University Press**：CQHE, JoPP
+- **Emerald**：Foresight
+- **Duke University Press**：The Philosophical Review
+- **Johns Hopkins University Press**：Review of Higher Education
+- **Frontiers Media**：Frontiers in Human Neuroscience
+- **HIIG**：Internet Policy Review
+- **APA**：J. Theor. Phil. Psych.
+- **BMJ Publishing Group**：Journal of Medical Ethics
+- **ACM**：TOCHI
+- **Sciedu Press**：International Journal of Higher Education
+- **Inderscience**：International Journal of Human Factors and Ergonomics
+- **Tamkang University Press**：Journal of Futures Studies
+- **Journal of Philosophy, Inc.**：The Journal of Philosophy
+- **Ohio State University Press（T&F委託）**：Journal of Higher Education
+- **Independent / Ruhr University Bochum**：PhiMiSci
+
+## 分野別索引
+
+- **未来研究**：Futures, Foresight, F&FS, JFS, TFSC, EJFR
+- **AI倫理**：EIT, AI and Ethics, AI and Society, Minds and Machines, BD&S, JoRT
+- **生命倫理**：JBI, Bioethics, JME, AJOB, HCR, TMB, CQHE
+- **神経倫理**：Neuroethics, AJOB Neuroscience, CogNP, Frontiers HN
+- **規制ガバナンス**：Reg & Gov, Policy Sciences, JoPP, Governance, PAR, IPR
+- **哲学（中堅）**：Analysis, Inquiry, Asian J Phil, Global Philosophy, Erkenntnis, Phil Psychology, Social Epistemology, Theoria, Ratio, AJP, J. Theor. Phil. Psych., PhiMiSci
+- **哲学（トップティア）**：Mind, Noûs, The Philosophical Review, The Journal of Philosophy
+- **技術哲学**：Phil & Tech
+- **教育**：TSC, IETI, HEQ, Active Learning in HE, HERD, EPT, SPE, JHE, RHE, SHE, ETR&D, IJHE
+- **HCI**：IJHCI, BIT, P&UC, IJHCS, IwC, TOCHI, CSCW, IJHFE
+- **死生学**：Death Studies
+- **言語学**：Language Sciences
+- **社会科学・メディア**：NM&S, ICS
+- **デジタル戦争**：Digital War
+- **認知科学**：Cognitive Sys Res
