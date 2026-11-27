@@ -333,7 +333,7 @@ function CascadeSimulator() {
 
   const cascade = computeCascade([...disabled]);
   const totalDisruption = Object.values(cascade).reduce((a,b)=>a+b,0) / INFRA_INDICATORS.length;
-  const japanContext = { energy:15.3, food:38, digital:6.7 };
+  const japanContext = { energy:16.4, food:37, digital:6.6 };
 
   return (
     <div style={{
@@ -439,9 +439,9 @@ function CascadeSimulator() {
             </div>
             <div style={{display:"flex",flexDirection:"column",gap:4}}>
               {[
-                {label:"エネルギー自給率", value:15.3, unit:"%",    note:"OECD最低水準"},
-                {label:"食料自給率",       value:38,   unit:"%",    note:"カロリーベース"},
-                {label:"デジタル赤字",     value:6.7,  unit:"兆円/年",note:"2024年"},
+                {label:"エネルギー自給率", value:16.4, unit:"%",    note:"2024年度・OECD最低水準"},
+                {label:"食料自給率",       value:37,   unit:"%",    note:"2025年度・カロリーベース"},
+                {label:"デジタル赤字",     value:6.6,  unit:"兆円/年",note:"2025年"},
                 {label:"海底ケーブル依存", value:99,   unit:"%",    note:"国際通信"},
               ].map((item) => (
                 <div key={item.label} style={{display:"flex",justifyContent:"space-between",alignItems:"center",fontSize:11}}>
