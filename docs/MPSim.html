@@ -6,452 +6,173 @@
   <title>マイクロプラスチック摂取量シミュレーター</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    input[type="range"] {
-      -webkit-appearance: none;
-      appearance: none;
-      height: 8px;
-      border-radius: 4px;
-      background: #e5e7eb;
-    }
-    input[type="range"]::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      appearance: none;
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      background: #2563eb;
-      cursor: pointer;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-    }
-    input[type="range"]::-moz-range-thumb {
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      background: #2563eb;
-      cursor: pointer;
-      border: none;
-    }
+    input[type="range"] { -webkit-appearance: none; appearance: none; height: 8px; border-radius: 4px; background: #e5e7eb; }
+    input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 20px; height: 20px; border-radius: 50%; background: #2563eb; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
+    input[type="range"]::-moz-range-thumb { width: 20px; height: 20px; border-radius: 50%; background: #2563eb; cursor: pointer; border: none; }
   </style>
 </head>
 <body class="bg-gradient-to-br from-slate-50 to-blue-50 min-h-screen p-4 md:p-8">
   <div class="max-w-2xl mx-auto" id="app">
-    <!-- ヘッダー -->
+
     <div class="text-center mb-8">
-      <h1 class="text-2xl md:text-3xl font-bold text-gray-800 mb-2">
-        マイクロプラスチック摂取量シミュレーター
-      </h1>
-      <p class="text-gray-600 text-sm">
-        1日の習慣から、相対的な摂取量を推定します
-      </p>
+      <h1 class="text-2xl md:text-3xl font-bold text-gray-800 mb-2">マイクロプラスチック摂取量シミュレーター</h1>
+      <p class="text-gray-600 text-sm">1日の習慣から、経路ごとの摂取量を論文の測定値で示します</p>
     </div>
 
-    <!-- 入力セクション -->
     <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 mb-6">
-      <h2 class="text-lg font-semibold text-gray-800 mb-4 flex items-center gap-2">
-        <span class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 text-sm">1</span>
-        1日の習慣を入力
-      </h2>
-      
-      <!-- ペットボトル水 -->
+      <h2 class="text-lg font-semibold text-gray-800 mb-4">1日の習慣を入力</h2>
+
       <div class="mb-6">
         <div class="flex justify-between items-center mb-2">
-          <label class="text-sm font-medium text-gray-700 flex items-center gap-2">
-            <span>🍶</span> ペットボトル水（500ml）
-          </label>
-          <span class="text-sm font-semibold text-gray-900 bg-gray-100 px-3 py-1 rounded-full">
-            <span id="bottledWater-value">1</span> 本/日
-          </span>
+          <label class="text-sm font-medium text-gray-700">🍶 ペットボトル水（500ml）</label>
+          <span class="text-sm font-semibold text-gray-900 bg-gray-100 px-3 py-1 rounded-full"><span id="bottledWater-value">1</span> 本/日</span>
         </div>
         <input type="range" id="bottledWater" min="0" max="5" value="1" class="w-full" oninput="updateSimulator()">
-        <div class="flex justify-between text-xs text-gray-400 mt-1"><span>0</span><span>5</span></div>
       </div>
 
-      <!-- 水道水 -->
       <div class="mb-6">
         <div class="flex justify-between items-center mb-2">
-          <label class="text-sm font-medium text-gray-700 flex items-center gap-2">
-            <span>🚰</span> 水道水
-          </label>
-          <span class="text-sm font-semibold text-gray-900 bg-gray-100 px-3 py-1 rounded-full">
-            <span id="tapWater-value">1</span> L/日
-          </span>
-        </div>
-        <input type="range" id="tapWater" min="0" max="3" value="1" class="w-full" oninput="updateSimulator()">
-        <div class="flex justify-between text-xs text-gray-400 mt-1"><span>0</span><span>3</span></div>
-      </div>
-
-      <!-- ティーバッグ -->
-      <div class="mb-6">
-        <div class="flex justify-between items-center mb-2">
-          <label class="text-sm font-medium text-gray-700 flex items-center gap-2">
-            <span>🍵</span> ティーバッグ（プラ製）
-          </label>
-          <span class="text-sm font-semibold text-gray-900 bg-gray-100 px-3 py-1 rounded-full">
-            <span id="teaBags-value">2</span> 杯/日
-          </span>
+          <label class="text-sm font-medium text-gray-700">🍵 ティーバッグ（プラスチック製）</label>
+          <span class="text-sm font-semibold text-gray-900 bg-gray-100 px-3 py-1 rounded-full"><span id="teaBags-value">2</span> 袋/日</span>
         </div>
         <input type="range" id="teaBags" min="0" max="10" value="2" class="w-full" oninput="updateSimulator()">
-        <div class="flex justify-between text-xs text-gray-400 mt-1"><span>0</span><span>10</span></div>
       </div>
 
-      <!-- プラカップ熱飲料 -->
-      <div class="mb-6">
+      <div class="mb-2">
         <div class="flex justify-between items-center mb-2">
-          <label class="text-sm font-medium text-gray-700 flex items-center gap-2">
-            <span>☕</span> プラカップ熱飲料（コーヒー等）
-          </label>
-          <span class="text-sm font-semibold text-gray-900 bg-gray-100 px-3 py-1 rounded-full">
-            <span id="hotCup-value">2</span> 杯/日
-          </span>
+          <label class="text-sm font-medium text-gray-700">☕ 紙コップの熱い飲み物（100ml）</label>
+          <span class="text-sm font-semibold text-gray-900 bg-gray-100 px-3 py-1 rounded-full"><span id="paperCup-value">2</span> 杯/日</span>
         </div>
-        <input type="range" id="hotCup" min="0" max="10" value="2" class="w-full" oninput="updateSimulator()">
-        <div class="flex justify-between text-xs text-gray-400 mt-1"><span>0</span><span>10</span></div>
-      </div>
-
-      <!-- プラ容器加熱 -->
-      <div class="mb-6">
-        <div class="flex justify-between items-center mb-2">
-          <label class="text-sm font-medium text-gray-700 flex items-center gap-2">
-            <span>📦</span> プラ容器レンジ加熱（弁当等）
-          </label>
-          <span class="text-sm font-semibold text-gray-900 bg-gray-100 px-3 py-1 rounded-full">
-            <span id="plasticHeating-value">1</span> 個/日
-          </span>
-        </div>
-        <input type="range" id="plasticHeating" min="0" max="10" value="1" class="w-full" oninput="updateSimulator()">
-        <div class="flex justify-between text-xs text-gray-400 mt-1"><span>0</span><span>10</span></div>
-      </div>
-
-      <!-- カップ麺 -->
-      <div class="mb-6">
-        <div class="flex justify-between items-center mb-2">
-          <label class="text-sm font-medium text-gray-700 flex items-center gap-2">
-            <span>🍜</span> カップ麺・カップスープ
-          </label>
-          <span class="text-sm font-semibold text-gray-900 bg-gray-100 px-3 py-1 rounded-full">
-            <span id="cupNoodle-value">0</span> 個/日
-          </span>
-        </div>
-        <input type="range" id="cupNoodle" min="0" max="5" value="0" class="w-full" oninput="updateSimulator()">
-        <div class="flex justify-between text-xs text-gray-400 mt-1"><span>0</span><span>5</span></div>
+        <input type="range" id="paperCup" min="0" max="10" value="2" class="w-full" oninput="updateSimulator()">
       </div>
     </div>
 
-    <!-- 結果セクション -->
-    <div id="result-section" class="rounded-2xl shadow-sm border p-6 mb-6 bg-amber-50 border-amber-200">
-      <h2 class="text-lg font-semibold text-gray-800 mb-4 flex items-center gap-2">
-        <span class="w-8 h-8 bg-white rounded-full flex items-center justify-center text-gray-600 text-sm shadow-sm">2</span>
-        推定結果
-      </h2>
-      
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
-        <div class="bg-white/80 backdrop-blur rounded-xl p-3 text-center">
-          <div class="text-2xl font-bold text-gray-800" id="daily-particles">36.1K</div>
-          <div class="text-xs text-gray-600">粒子/日</div>
-        </div>
-        <div class="bg-white/80 backdrop-blur rounded-xl p-3 text-center">
-          <div class="text-2xl font-bold text-gray-800" id="weekly-particles">252.7K</div>
-          <div class="text-xs text-gray-600">粒子/週</div>
-        </div>
-        <div class="bg-white/80 backdrop-blur rounded-xl p-3 text-center">
-          <div class="text-2xl font-bold text-gray-800" id="yearly-particles">13.2M</div>
-          <div class="text-xs text-gray-600">粒子/年</div>
-        </div>
-        <div class="bg-white/80 backdrop-blur rounded-xl p-3 text-center">
-          <div class="text-2xl font-bold text-gray-800" id="forty-year-particles">526.6M</div>
-          <div class="text-xs text-gray-600">粒子/40年</div>
-        </div>
-      </div>
-
-      <div class="flex items-center justify-center gap-3 py-3">
-        <span class="text-gray-600">摂取レベル:</span>
-        <span class="text-xl font-bold" id="level-text">やや高め</span>
-      </div>
-
-      <!-- 具体例表示 -->
-      <div class="bg-white/80 backdrop-blur rounded-xl p-4 text-center mt-4" id="metaphor-box">
-        <div class="text-lg text-gray-700 mb-1">40年間で...</div>
-        <div class="text-2xl font-bold" id="metaphor-text">🎲 サイコロ 2個分</div>
-        <div class="text-xs text-gray-500 mt-2" id="metaphor-weight">(約 8.5g)</div>
-      </div>
-
-      <!-- 寄与度バー -->
-      <div class="mt-4 bg-white/60 rounded-xl p-4">
-        <div class="text-sm font-medium text-gray-700 mb-2">経路別の寄与度</div>
-        <div class="flex h-6 rounded-full overflow-hidden bg-gray-100" id="contribution-bar"></div>
-        <div class="flex flex-wrap gap-2 mt-2 text-xs" id="contribution-legend"></div>
-      </div>
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 mb-6">
+      <h2 class="text-lg font-semibold text-gray-800 mb-2">経路ごとの推定（1日あたり）</h2>
+      <p class="text-xs text-gray-500 mb-4">論文ごとに数えている粒子の大きさが違うため、経路どうしを足し合わせていません。</p>
+      <div class="space-y-3" id="route-results"></div>
     </div>
 
-    <!-- 行動変容セクション -->
-    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 mb-6" id="action-section">
-      <h2 class="text-lg font-semibold text-gray-800 mb-4 flex items-center gap-2">
-        <span class="w-8 h-8 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-600 text-sm">3</span>
-        今日からできること
-      </h2>
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 mb-6">
+      <h2 class="text-lg font-semibold text-gray-800 mb-2">比べるための目安</h2>
+      <p class="text-sm text-gray-700">食事と吸入を合わせた生涯の摂取モデルでは、1〜5000 µm の粒子の摂取の中央値は、成人で1日 883 粒子（583 ng）、子どもで1日 553 粒子（184 ng）と推定されています（Mohamed Nor et al., 2021）。</p>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 mb-6">
+      <h2 class="text-lg font-semibold text-gray-800 mb-2">出典を確認できず、計算から外した経路</h2>
+      <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
+        <li>水道水</li>
+        <li>プラ容器のレンジ加熱（弁当など）</li>
+        <li>カップ麺・カップスープ</li>
+      </ul>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 mb-6">
+      <h2 class="text-lg font-semibold text-gray-800 mb-4">今日からできること</h2>
       <div class="space-y-3" id="action-items"></div>
     </div>
 
-    <!-- 注意書き -->
     <div class="bg-gray-50 rounded-2xl p-6 border border-gray-200">
       <button onclick="toggleDetails()" class="flex items-center justify-between w-full text-left">
-        <span class="text-sm font-medium text-gray-700">⚠️ 推定値について</span>
+        <span class="text-sm font-medium text-gray-700">⚠️ 推定値と出典について</span>
         <span class="text-gray-400" id="details-arrow">▼</span>
       </button>
-      
       <div class="mt-4 text-sm text-gray-600 space-y-2 hidden" id="details-content">
-        <p><strong>このシミュレーターの限界：</strong></p>
         <ul class="list-disc list-inside space-y-1 ml-2">
-          <li>測定方法により結果が2〜5桁異なる可能性があります</li>
-          <li>WWFの「週5g（クレカ1枚）」説は学術的に否定されています</li>
-          <li>実際の摂取量は数μg〜数百mg/週と推定幅が非常に広いです</li>
-          <li>健康リスクの閾値は現時点で不明です</li>
+          <li>数えている粒子の大きさの下限が論文ごとに違い、それによって数が桁で変わります。</li>
+          <li>粒子の数から重さへの換算は、粒子の大きさで桁が変わるため行っていません。</li>
+          <li>健康リスクの閾値は現時点で分かっていないため、摂取レベルの判定は表示していません。</li>
         </ul>
-        <p class="mt-3"><strong>このツールの目的：</strong></p>
-        <ul class="list-disc list-inside space-y-1 ml-2">
-          <li>絶対量ではなく、相対的な比較と傾向把握</li>
-          <li>行動変容の方向性を示すこと</li>
-          <li>「どの習慣が影響大か」の可視化</li>
+        <p class="mt-3"><strong>出典</strong></p>
+        <ul class="list-disc list-inside space-y-1 ml-2 text-xs">
+          <li>ペットボトル水：Mason SA, Welch VG, Neratko J (2018). Synthetic Polymer Contamination in Bottled Water. Frontiers in Chemistry 6:407. doi:10.3389/fchem.2018.00407（1Lあたり平均 10.4 粒子〔100 µm 超〕、6.5 µm 以上で平均 325 粒子）</li>
+          <li>ティーバッグ：Hernandez LM, et al. (2019). Plastic Teabags Release Billions of Microparticles and Nanoparticles into Tea. Environmental Science &amp; Technology 53:12300–12310. doi:10.1021/acs.est.9b02540（95 °C で浸出。1袋あたり 11.6×10⁹ 個のマイクロプラスチックという値は、Ranjan et al. 2021 での引用による）</li>
+          <li>紙コップの熱い飲み物：Ranjan VP, Joseph A, Goel S (2021). Microplastics and other harmful substances released from disposable paper cups into hot water. Journal of Hazardous Materials 404:124118. doi:10.1016/j.jhazmat.2020.124118（85–90 °C の湯 100 ml を15分置き、ミクロンの大きさの粒子が約 25,000 個）</li>
+          <li>比べるための目安：Mohamed Nor NH, et al. (2021). Lifetime Accumulation of Microplastic in Children and Adults. Environmental Science &amp; Technology 55:5084–5096. doi:10.1021/acs.est.0c07384</li>
         </ul>
-        <p class="mt-3 text-xs text-gray-500">
-          係数出典: Mason 2018, Hernandez 2019, Mohamed Nor 2021, IIT Kharagpur 2021, China Jiliang Univ 2022
-        </p>
       </div>
     </div>
 
-    <!-- フッター -->
     <div class="text-center mt-6 text-xs text-gray-400">
       <a href="index.html" class="hover:text-gray-600">Under-Recognized Future Risks Project</a>
     </div>
   </div>
 
   <script>
-    // 係数（1日あたり）
-    const COEFFICIENTS = {
-      bottledWater: 50,      // 粒子/本（500ml）
-      tapWater: 10,          // 粒子/L
-      teaBag: 10000,         // 粒子/杯（プラ製）
-      hotCup: 8000,          // 粒子/杯（熱飲料でプラ溶出促進）
-      plasticHeating: 5000,  // 粒子/個
-      cupNoodle: 8000        // 粒子/個（熱湯+発泡スチロール）
-    };
-
-    const contributorLabels = {
-      bottledWater: 'ペットボトル',
-      tapWater: '水道水',
-      teaBags: 'ティーバッグ',
-      hotCup: 'プラカップ熱飲料',
-      plasticHeating: 'プラ容器加熱',
-      cupNoodle: 'カップ麺'
-    };
-
-    const colors = ['bg-blue-500', 'bg-cyan-500', 'bg-amber-500', 'bg-purple-500', 'bg-rose-500', 'bg-orange-500'];
-
-    // 比喩用の基準（グラム）
-    const METAPHORS = {
-      dice: { name: 'サイコロ', weight: 4, icon: '🎲' },
-      creditCard: { name: 'クレジットカード', weight: 5, icon: '💳' },
-      phoneCase: { name: 'スマホケース', weight: 30, icon: '📱' },
-      phone: { name: 'スマホ', weight: 170, icon: '📱' }
-    };
-
-    // 粒子数→質量換算（保守的推定: 1億粒子 ≒ 1g）
-    const PARTICLES_PER_GRAM = 100000000;
-
-    function getMetaphor(fortyYearParticles) {
-      const grams = fortyYearParticles / PARTICLES_PER_GRAM;
-      
-      if (grams >= 170) {
-        const count = Math.round(grams / METAPHORS.phone.weight * 10) / 10;
-        return { ...METAPHORS.phone, count, grams };
-      } else if (grams >= 30) {
-        const count = Math.round(grams / METAPHORS.phoneCase.weight * 10) / 10;
-        return { ...METAPHORS.phoneCase, count, grams };
-      } else if (grams >= 5) {
-        const count = Math.round(grams / METAPHORS.creditCard.weight * 10) / 10;
-        return { ...METAPHORS.creditCard, count, grams };
-      } else {
-        const count = Math.round(grams / METAPHORS.dice.weight * 10) / 10;
-        return { ...METAPHORS.dice, count, grams: Math.max(grams, 0.1) };
+    // 経路ごとの係数（出典の値・単位をそのまま持つ）
+    const ROUTES = {
+      bottledWater: {
+        label: 'ペットボトル水', unit: '本',
+        perUnit: [
+          { size: '100 µm 超', value: 5.2 },     // 10.4 粒子/L × 0.5 L（Mason 2018）
+          { size: '6.5 µm 以上', value: 162.5 }  // 325 粒子/L × 0.5 L（Mason 2018）
+        ],
+        source: 'Mason et al., 2018'
+      },
+      teaBags: {
+        label: 'ティーバッグ', unit: '袋',
+        perUnit: [
+          { size: 'マイクロプラスチック', value: 11.6e9 } // Hernandez 2019（Ranjan 2021 での引用）
+        ],
+        source: 'Hernandez et al., 2019（二次引用）'
+      },
+      paperCup: {
+        label: '紙コップの熱い飲み物', unit: '杯',
+        perUnit: [
+          { size: 'ミクロンの大きさ', value: 25000 } // Ranjan 2021
+        ],
+        source: 'Ranjan et al., 2021'
       }
-    }
+    };
 
     function formatNumber(num) {
-      if (num >= 1000000000) return `${(num / 1000000000).toFixed(1)}B`;
-      if (num >= 1000000) return `${(num / 1000000).toFixed(1)}M`;
-      if (num >= 1000) return `${(num / 1000).toFixed(1)}K`;
-      return num.toLocaleString();
+      if (num >= 1e9) return `${(num / 1e9).toFixed(1)}B`;
+      if (num >= 1e6) return `${(num / 1e6).toFixed(1)}M`;
+      if (num >= 1e3) return `${(num / 1e3).toFixed(1)}K`;
+      return (Math.round(num * 10) / 10).toLocaleString();
     }
 
     function updateSimulator() {
-      const bottledWater = parseInt(document.getElementById('bottledWater').value);
-      const tapWater = parseInt(document.getElementById('tapWater').value);
-      const teaBags = parseInt(document.getElementById('teaBags').value);
-      const hotCup = parseInt(document.getElementById('hotCup').value);
-      const plasticHeating = parseInt(document.getElementById('plasticHeating').value);
-      const cupNoodle = parseInt(document.getElementById('cupNoodle').value);
-
-      // 値表示を更新
-      document.getElementById('bottledWater-value').textContent = bottledWater;
-      document.getElementById('tapWater-value').textContent = tapWater;
-      document.getElementById('teaBags-value').textContent = teaBags;
-      document.getElementById('hotCup-value').textContent = hotCup;
-      document.getElementById('plasticHeating-value').textContent = plasticHeating;
-      document.getElementById('cupNoodle-value').textContent = cupNoodle;
-
-      // 計算（1日あたり）
-      const contributions = {
-        bottledWater: bottledWater * COEFFICIENTS.bottledWater,
-        tapWater: tapWater * COEFFICIENTS.tapWater,
-        teaBags: teaBags * COEFFICIENTS.teaBag,
-        hotCup: hotCup * COEFFICIENTS.hotCup,
-        plasticHeating: plasticHeating * COEFFICIENTS.plasticHeating,
-        cupNoodle: cupNoodle * COEFFICIENTS.cupNoodle
-      };
-
-      const dailyParticles = Object.values(contributions).reduce((a, b) => a + b, 0);
-      const weeklyParticles = dailyParticles * 7;
-      const yearlyParticles = dailyParticles * 365;
-      const fortyYearParticles = yearlyParticles * 40;
-
-      // 結果表示
-      document.getElementById('daily-particles').textContent = formatNumber(dailyParticles);
-      document.getElementById('weekly-particles').textContent = formatNumber(weeklyParticles);
-      document.getElementById('yearly-particles').textContent = formatNumber(yearlyParticles);
-      document.getElementById('forty-year-particles').textContent = formatNumber(fortyYearParticles);
-
-      // レベル判定（1日あたりで判定）
-      let level, levelColor, bgClass, borderClass;
-      if (dailyParticles < 1000) {
-        level = '低'; levelColor = 'text-emerald-700';
-        bgClass = 'bg-emerald-50'; borderClass = 'border-emerald-200';
-      } else if (dailyParticles < 10000) {
-        level = '平均的'; levelColor = 'text-blue-700';
-        bgClass = 'bg-blue-50'; borderClass = 'border-blue-200';
-      } else if (dailyParticles < 50000) {
-        level = 'やや高め'; levelColor = 'text-amber-700';
-        bgClass = 'bg-amber-50'; borderClass = 'border-amber-200';
-      } else {
-        level = '高'; levelColor = 'text-red-700';
-        bgClass = 'bg-red-50'; borderClass = 'border-red-200';
+      const counts = {};
+      for (const key of Object.keys(ROUTES)) {
+        counts[key] = parseInt(document.getElementById(key).value);
+        document.getElementById(key + '-value').textContent = counts[key];
       }
 
-      const levelText = document.getElementById('level-text');
-      levelText.textContent = level;
-      levelText.className = `text-xl font-bold ${levelColor}`;
+      const container = document.getElementById('route-results');
+      container.innerHTML = Object.entries(ROUTES).map(([key, r]) => {
+        const n = counts[key];
+        const rows = r.perUnit.map(p => `
+          <div class="flex justify-between text-sm">
+            <span class="text-gray-600">${p.size}</span>
+            <span class="font-semibold text-gray-800">${formatNumber(n * p.value)} 粒子/日</span>
+          </div>`).join('');
+        return `
+          <div class="p-4 rounded-xl border border-gray-100 bg-gray-50">
+            <div class="flex justify-between mb-1">
+              <span class="font-medium text-gray-800">${r.label}（${n} ${r.unit}/日）</span>
+              <span class="text-xs text-gray-500">${r.source}</span>
+            </div>
+            ${rows}
+          </div>`;
+      }).join('');
 
-      const resultSection = document.getElementById('result-section');
-      resultSection.className = `rounded-2xl shadow-sm border p-6 mb-6 ${bgClass} ${borderClass}`;
-
-      // 比喩表示を更新
-      const metaphor = getMetaphor(fortyYearParticles);
-      const metaphorText = document.getElementById('metaphor-text');
-      const metaphorWeight = document.getElementById('metaphor-weight');
-      
-      if (metaphor.count < 0.1) {
-        metaphorText.textContent = `${metaphor.icon} ${metaphor.name}の欠片程度`;
-      } else if (metaphor.count === 1) {
-        metaphorText.textContent = `${metaphor.icon} ${metaphor.name} 約1個分`;
-      } else {
-        metaphorText.textContent = `${metaphor.icon} ${metaphor.name} 約${metaphor.count}個分`;
-      }
-      metaphorWeight.textContent = `(約 ${metaphor.grams.toFixed(1)}g)`;
-
-      // 寄与度バー
-      const barContainer = document.getElementById('contribution-bar');
-      const legendContainer = document.getElementById('contribution-legend');
-      barContainer.innerHTML = '';
-      legendContainer.innerHTML = '';
-
-      const entries = Object.entries(contributions);
-      entries.forEach(([key, value], i) => {
-        const percentage = dailyParticles > 0 ? (value / dailyParticles) * 100 : 0;
-        if (percentage > 0) {
-          const bar = document.createElement('div');
-          bar.className = `${colors[i]} transition-all duration-500`;
-          bar.style.width = `${percentage}%`;
-          barContainer.appendChild(bar);
-
-          const legend = document.createElement('div');
-          legend.className = 'flex items-center gap-1';
-          legend.innerHTML = `<div class="w-3 h-3 rounded ${colors[i]}"></div><span class="text-gray-600">${contributorLabels[key]} ${percentage.toFixed(0)}%</span>`;
-          legendContainer.appendChild(legend);
-        }
-      });
-
-      // 行動変容アイテム
-      updateActionItems(bottledWater, teaBags, hotCup, plasticHeating, cupNoodle);
+      updateActionItems(counts);
     }
 
-    function updateActionItems(bottledWater, teaBags, hotCup, plasticHeating, cupNoodle) {
-      const container = document.getElementById('action-items');
-      const scenarios = [];
-
-      if (bottledWater > 0) {
-        const saved = bottledWater * (COEFFICIENTS.bottledWater - COEFFICIENTS.tapWater);
-        scenarios.push({
-          action: 'ペットボトルを水筒に切替',
-          dailyReduction: saved,
-          yearlyReduction: saved * 365,
-          icon: '🚰'
-        });
-      }
-
-      if (teaBags > 0) {
-        const saved = teaBags * COEFFICIENTS.teaBag;
-        scenarios.push({
-          action: 'リーフティーまたは紙製ティーバッグに',
-          dailyReduction: saved,
-          yearlyReduction: saved * 365,
-          icon: '🍵'
-        });
-      }
-
-      if (hotCup > 0) {
-        const saved = hotCup * COEFFICIENTS.hotCup;
-        scenarios.push({
-          action: 'マイボトル・陶器カップを使用',
-          dailyReduction: saved,
-          yearlyReduction: saved * 365,
-          icon: '☕'
-        });
-      }
-
-      if (plasticHeating > 0) {
-        const saved = plasticHeating * COEFFICIENTS.plasticHeating;
-        scenarios.push({
-          action: 'ガラス・陶器容器で加熱',
-          dailyReduction: saved,
-          yearlyReduction: saved * 365,
-          icon: '🥣'
-        });
-      }
-
-      if (cupNoodle > 0) {
-        const saved = cupNoodle * COEFFICIENTS.cupNoodle;
-        scenarios.push({
-          action: 'どんぶりに移してお湯を注ぐ',
-          dailyReduction: saved,
-          yearlyReduction: saved * 365,
-          icon: '🍜'
-        });
-      }
-
-      scenarios.sort((a, b) => b.dailyReduction - a.dailyReduction);
-
-      container.innerHTML = scenarios.map(s => `
-        <div class="flex items-center gap-4 p-4 bg-emerald-50 rounded-xl border border-emerald-100">
+    function updateActionItems(counts) {
+      const items = [];
+      if (counts.bottledWater > 0) items.push({ icon: '🚰', action: 'ペットボトルを水筒に切替', note: 'この経路の粒子（Mason 2018 の値）が減ります。水筒に入れる水そのものの粒子は、出典を確認できていないため計算していません。' });
+      if (counts.teaBags > 0) items.push({ icon: '🍵', action: 'リーフティーまたは紙製ティーバッグに', note: 'プラスチック製ティーバッグからの粒子（Hernandez 2019）がなくなります。' });
+      if (counts.paperCup > 0) items.push({ icon: '☕', action: 'マイボトル・陶器のカップを使う', note: '紙コップの内側のフィルムからの粒子（Ranjan 2021）がなくなります。' });
+      document.getElementById('action-items').innerHTML = items.map(s => `
+        <div class="flex items-start gap-4 p-4 bg-emerald-50 rounded-xl border border-emerald-100">
           <div class="text-2xl">${s.icon}</div>
           <div class="flex-1">
             <div class="font-medium text-gray-800">${s.action}</div>
-            <div class="text-sm text-emerald-700">
-              1日 -${formatNumber(s.dailyReduction)} 粒子（年間 -${formatNumber(s.yearlyReduction)}）
-            </div>
+            <div class="text-xs text-gray-600 mt-1">${s.note}</div>
           </div>
-        </div>
-      `).join('');
-
-      document.getElementById('action-section').style.display = scenarios.length > 0 ? 'block' : 'none';
+        </div>`).join('');
     }
 
     function toggleDetails() {
@@ -461,7 +182,6 @@
       arrow.textContent = content.classList.contains('hidden') ? '▼' : '▲';
     }
 
-    // 初期化
     updateSimulator();
   </script>
 </body>
