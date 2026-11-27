@@ -45,6 +45,13 @@
         </div>
         <input type="range" id="paperCup" min="0" max="10" value="2" class="w-full" oninput="updateSimulator()">
       </div>
+      <div class="mb-2 mt-6">
+        <div class="flex justify-between items-center mb-2">
+          <label class="text-sm font-medium text-gray-700">🍜 カップ麺（カップ入り即席麺）</label>
+          <span class="text-sm font-semibold text-gray-900 bg-gray-100 px-3 py-1 rounded-full"><span id="cupNoodle-value">0</span> 食/日</span>
+        </div>
+        <input type="range" id="cupNoodle" min="0" max="3" value="0" class="w-full" oninput="updateSimulator()">
+      </div>
     </div>
 
     <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 mb-6">
@@ -63,7 +70,7 @@
       <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
         <li>水道水</li>
         <li>プラ容器のレンジ加熱（弁当など）</li>
-        <li>カップ麺・カップスープ</li>
+        <li>カップスープ</li>
       </ul>
     </div>
 
@@ -88,6 +95,7 @@
           <li>ペットボトル水：Mason SA, Welch VG, Neratko J (2018). Synthetic Polymer Contamination in Bottled Water. Frontiers in Chemistry 6:407. doi:10.3389/fchem.2018.00407（1Lあたり平均 10.4 粒子〔100 µm 超〕、6.5 µm 以上で平均 325 粒子）</li>
           <li>ティーバッグ：Hernandez LM, et al. (2019). Plastic Teabags Release Billions of Microparticles and Nanoparticles into Tea. Environmental Science &amp; Technology 53:12300–12310. doi:10.1021/acs.est.9b02540（95 °C で浸出。1袋あたり 11.6×10⁹ 個のマイクロプラスチックという値は、Ranjan et al. 2021 での引用による）</li>
           <li>紙コップの熱い飲み物：Ranjan VP, Joseph A, Goel S (2021). Microplastics and other harmful substances released from disposable paper cups into hot water. Journal of Hazardous Materials 404:124118. doi:10.1016/j.jhazmat.2020.124118（85–90 °C の湯 100 ml を15分置き、ミクロンの大きさの粒子が約 25,000 個）</li>
+          <li>カップ麺：Sun X, Zhu Y (2026). Microplastic contamination in barrel-packaged instant noodles and human risk assessment. Journal of Food Composition and Analysis 158:109426. doi:10.1016/j.jfca.2026.109426（95 °C の湯 500 ml を注いで15分ふたをし、さらに20分置く条件で、1杯あたり 318 ± 94.03 個。20 µm 未満の粒子とナノプラスチックは数えていない）</li>
           <li>比べるための目安：Mohamed Nor NH, et al. (2021). Lifetime Accumulation of Microplastic in Children and Adults. Environmental Science &amp; Technology 55:5084–5096. doi:10.1021/acs.est.0c07384</li>
         </ul>
       </div>
@@ -122,6 +130,13 @@
           { size: 'ミクロンの大きさ', value: 25000 } // Ranjan 2021
         ],
         source: 'Ranjan et al., 2021'
+      },
+      cupNoodle: {
+        label: 'カップ麺', unit: '食',
+        perUnit: [
+          { size: '20 µm 以上', value: 318 } // Sun & Zhu 2026（1杯あたり 318 ± 94.03）
+        ],
+        source: 'Sun & Zhu, 2026'
       }
     };
 
@@ -165,6 +180,7 @@
       if (counts.bottledWater > 0) items.push({ icon: '🚰', action: 'ペットボトルを水筒に切替', note: 'この経路の粒子（Mason 2018 の値）が減ります。水筒に入れる水そのものの粒子は、出典を確認できていないため計算していません。' });
       if (counts.teaBags > 0) items.push({ icon: '🍵', action: 'リーフティーまたは紙製ティーバッグに', note: 'プラスチック製ティーバッグからの粒子（Hernandez 2019）がなくなります。' });
       if (counts.paperCup > 0) items.push({ icon: '☕', action: 'マイボトル・陶器のカップを使う', note: '紙コップの内側のフィルムからの粒子（Ranjan 2021）がなくなります。' });
+      if (counts.cupNoodle > 0) items.push({ icon: '🍜', action: 'どんぶりに移してお湯を注ぐ', note: 'カップ麺の容器からの粒子（Sun & Zhu 2026）がなくなります。' });
       document.getElementById('action-items').innerHTML = items.map(s => `
         <div class="flex items-start gap-4 p-4 bg-emerald-50 rounded-xl border border-emerald-100">
           <div class="text-2xl">${s.icon}</div>
